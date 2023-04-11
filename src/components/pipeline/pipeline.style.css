@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.pipeline_page-block #empty, .pipeline_page-block .wrapper[data-id="empty"][data-position="bottom"] {
+.pipeline_page-block #empty {
     display: none !important;
 }
 

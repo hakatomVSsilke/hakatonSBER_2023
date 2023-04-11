@@ -1,23 +1,17 @@
-import React, {useState, useRef, useMemo} from "react";
-import {useStore} from "react-redux";
+import React from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {
     drop,
     dragEnd,
     dragStart,
-    dragOver,
     dragLeave,
 } from "../../slices/feedback/feedbackPipeline.slice";
 
 const FeedbackComponent = ({item, statusName}: any) => {
-    const dispatch = useDispatch();
+    const dispatch= useDispatch();
     const itemId = item.name;
     const itemName = item.name;
     const dragStartElement = useSelector((state: any) => state.feedbackPipelineSlice.dragStartElement);
-
-    const dragStartHandler = (e: any) => {
-        dispatch(dragStart({item, statusBefore: statusName}))
-    }
 
     const dragOverHandler = (e: any) => {
         e.preventDefault();
@@ -34,13 +28,14 @@ const FeedbackComponent = ({item, statusName}: any) => {
         };
 
         dispatch(drop(data));
+        dispatch(dragEnd());
     }
 
     return (
         <div className = "element-wrapper" onDragEnd = {() => dispatch(dragEnd())} onDragLeave={() => dispatch(dragLeave())}>
             <div
                 draggable='true'
-                onDragStart = {(e:any) => dragStartHandler(e)}
+                onDragStart = {() => dispatch(dragStart({item, statusFrom: statusName}))}
                 id = {itemId}
                 className = {"feedback-block"}
                 key={itemId}
@@ -52,6 +47,7 @@ const FeedbackComponent = ({item, statusName}: any) => {
                 className={'wrapper'}
                 onDragOver ={(e:any) => dragOverHandler(e)}
                 onDrop = {(e: any) => dropHandler(e)}
+                onDragEnd = {() => dispatch(dragEnd())}
                 data-id = {itemId}
                 data-position = "bottom"
             >

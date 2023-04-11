@@ -19,7 +19,7 @@ const PipelinePageComponent = ({items}: any) => {
         <div className="pipeline_page-block">
             {
                 Object.values(feedbacks).map((statusData: any) => {
-                    return <StatusColumnComponent name={statusData.statusName} feedbacks={statusData.feedbacks}/>
+                    return <StatusColumnComponent key = {statusData.statusName} name={statusData.statusName} feedbacks={statusData.feedbacks}/>
                 })
             }
         </div>

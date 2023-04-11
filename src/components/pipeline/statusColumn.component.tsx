@@ -13,11 +13,11 @@ const StatusColumnComponent = ({name, feedbacks}: any) => {
             </div>
 
             <div className='status_column-list'>
-                <FeedbackComponent item = {{name: 'empty'}} statusName = {name}/>
+                <FeedbackComponent key = {'empty'} item = {{name: 'empty'}} statusName = {name}/>
 
                 {
                     feedbacks.map((item: any) => {
-                        return <FeedbackComponent item = {item} statusName = {name} />
+                        return <FeedbackComponent key = {item.name} item = {item} statusName = {name} />
                     })
                 }
             </div>

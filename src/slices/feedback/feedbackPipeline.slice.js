@@ -26,30 +26,31 @@ export const feedbackPipelineSlice = createSlice({
                 element.classList.remove('draggedOver');
             })
         },
-        dragOver: () => {
-            // console.log(state, 'over')
-        },
         // TODO когда с бэка будут данные прилетать - заменить поиск с name на id
         drop: (state, action) => {
-            const data = action.payload;
+            const data             = action.payload;
+            const droppedInItems   = state.items[data.statusTo].feedbacks;
+            const removedFromItems = state.items[data.from.statusFrom].feedbacks;
 
-            const droppedInItems = state.items[data.statusTo].feedbacks;
-            let elementIndex = droppedInItems.findIndex(el => el.name === data.dropOnElementId)
-
-            let newArray = droppedInItems.filter(el => el.name !== data.from.item.name);
+            let elementIndex= droppedInItems.findIndex(el => el.name === data.dropOnElementId);
+            let newArray= droppedInItems.filter(el => el.name !== data.from.item.name);
+            let filteredRemovedFromItems = removedFromItems.filter(el => el.name !== data.from.item.name);
 
             elementIndex++;
-            // if (elementIndex <= 0) {
-            // }
 
-            console.log(newArray.map(el => el.name), data, elementIndex)
             newArray = [].concat(newArray.slice(0, elementIndex), data.from.item, newArray.slice(elementIndex));
 
             state.items[data.statusTo].feedbacks = newArray;
+
+            if (data.from.statusFrom === data.statusTo) {
+                return;
+            }
+
+            state.items[data.from.statusFrom].feedbacks = filteredRemovedFromItems;
         },
     }
 });
 
-export const {dragStart, dragEnd, dragOver, drop, setData, dragLeave} = feedbackPipelineSlice.actions;
+export const {dragStart, dragEnd,drop, setData, dragLeave} = feedbackPipelineSlice.actions;
 
 export default feedbackPipelineSlice.reducer;
