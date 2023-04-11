@@ -16,7 +16,7 @@ const FeedBackPipelinePageComponent = () => {
 
     return (
         <>
-            <FeedbackSectionHeader />
+            <FeedbackSectionHeader  />
 
             <Provider store={pipelineStore}>
                 <PipelinePageComponent items = {backData}/>
