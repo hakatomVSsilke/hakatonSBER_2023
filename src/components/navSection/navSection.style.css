@@ -1,0 +1,29 @@
+#nav_section-block {
+    height: 100vh;
+    width: max-content;
+    background-color: #08a552;
+    padding: 0 10px;
+    max-width: 110px;
+    position: fixed;
+}
+
+#nav_section-block #nav_section_buttons-block {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+
+#nav_section-block #nav_section_buttons-block a {
+    color: black;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+#nav_section-block #nav_section_buttons-block a.active {
+    color: white !important;
+    font-weight: bold;
+}
+#nav_section-block #nav_section_buttons-block a.active * {
+    fill: white;
+}

@@ -1,0 +1,23 @@
+.pipeline_page-block {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.pipeline_page-block .element-wrapper {
+    margin: 10px 0;
+}
+
+.pipeline_page-block .wrapper {
+    height: 20px;
+    background-color: red;
+}
+
+.pipeline_page-block .wrapper.draggedOver {
+    background-color: green;
+}
+
+.pipeline_page-block .feedback-block {
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+}
