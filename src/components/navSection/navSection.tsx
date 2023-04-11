@@ -20,7 +20,7 @@ const navSection: React.FunctionComponent = () => {
 
                     Задачи
                 </Link>
-                <Link to='' className = {pathName === '/departments' ? 'active' : ''}>
+                <Link to='/departments' className = {pathName === '/departments' ? 'active' : ''}>
                     <IconComponent name = "departments" />
 
                     Отделы
