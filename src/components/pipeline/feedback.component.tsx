@@ -29,9 +29,8 @@ const FeedbackComponent = ({item, statusName}: any) => {
         const data = {
             dropOnElementId: e.target.dataset.id,
             position: e.target.dataset.position,
-            status: statusName,
-            statusFrom: dragStartElement,
-            from: dragStartElement
+            statusTo: statusName,
+            from: dragStartElement,
         };
 
         dispatch(drop(data));
@@ -40,33 +39,22 @@ const FeedbackComponent = ({item, statusName}: any) => {
     return (
         <div className = "element-wrapper" onDragEnd = {() => dispatch(dragEnd())} onDragLeave={() => dispatch(dragLeave())}>
             <div
-                className = "wrapper"
-                onDragOver ={(e:any) => dragOverHandler(e)}
-                onDrop = {(e: any) => dropHandler(e)}
-                data-id = {itemId}
-                data-position = "top"
-            >
-
-            </div>
-
-            <div
                 draggable='true'
                 onDragStart = {(e:any) => dragStartHandler(e)}
                 id = {itemId}
-                className = "feedback-block"
+                className = {"feedback-block"}
                 key={itemId}
             >
                 {itemName}
             </div>
 
             <div
-                className='wrapper'
+                className={'wrapper'}
                 onDragOver ={(e:any) => dragOverHandler(e)}
                 onDrop = {(e: any) => dropHandler(e)}
                 data-id = {itemId}
                 data-position = "bottom"
             >
-
             </div>
         </div>
     );

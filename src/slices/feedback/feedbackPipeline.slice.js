@@ -15,7 +15,6 @@ export const feedbackPipelineSlice = createSlice({
         },
         dragStart: (state, action) => {
             state.dragStartElement = action.payload;
-            console.log(state.dragStartElement)
         },
         dragEnd: () => {
             document.querySelectorAll('.draggedOver').forEach(element => {
@@ -30,24 +29,23 @@ export const feedbackPipelineSlice = createSlice({
         dragOver: () => {
             // console.log(state, 'over')
         },
+        // TODO когда с бэка будут данные прилетать - заменить поиск с name на id
         drop: (state, action) => {
-            const data               = action.payload;
-            const forAddFeedbacks    = state.items[data.status].feedbacks;
-            const forRemoveFeedbacks = state.items[data.statusFrom.statusBefore].feedbacks;
-            let addIndex = forAddFeedbacks.findIndex(el => el == data.id);
-            let removeIndex = forAddFeedbacks.findIndex(el => el == data.id);
-            //
-            // if (data.position === 'bottom') {
-            //     index++;
-            // }
-            //
-            let newArray = [].concat(forAddFeedbacks.slice(0, addIndex), [data.from.item], forAddFeedbacks.slice(addIndex));
-            let newArray2 = [].concat(forAddFeedbacks.slice(0, removeIndex), forRemoveFeedbacks.slice(removeIndex));
+            const data = action.payload;
 
-            console.log(newArray, data.from)
-            //
-            state.items[data.status].feedbacks = newArray;
-            state.items[data.status].feedbacks = newArray;
+            const droppedInItems = state.items[data.statusTo].feedbacks;
+            let elementIndex = droppedInItems.findIndex(el => el.name === data.dropOnElementId)
+
+            let newArray = droppedInItems.filter(el => el.name !== data.from.item.name);
+
+            elementIndex++;
+            // if (elementIndex <= 0) {
+            // }
+
+            console.log(newArray.map(el => el.name), data, elementIndex)
+            newArray = [].concat(newArray.slice(0, elementIndex), data.from.item, newArray.slice(elementIndex));
+
+            state.items[data.statusTo].feedbacks = newArray;
         },
     }
 });

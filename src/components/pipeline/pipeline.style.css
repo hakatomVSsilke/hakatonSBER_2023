@@ -21,3 +21,11 @@
     padding: 10px;
     cursor: pointer;
 }
+
+.pipeline_page-block #empty, .pipeline_page-block .wrapper[data-id="empty"][data-position="bottom"] {
+    display: none !important;
+}
+
+.pipeline_page-block .status_column-list .element-wrapper:nth-child(2) .wrapper[data-position="top"] {
+    display: none;
+}

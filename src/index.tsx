@@ -1,6 +1,6 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
+import {createRoot} from 'react-dom/client';
+import {Provider} from 'react-redux';
 import authStore from "./stores/auth.store";
 import App from './App';
 
@@ -11,7 +11,7 @@ const root = createRoot(container);
 
 root.render(
     <Provider store={authStore}>
-      <App />
+            <App/>
     </Provider>
 );
 
