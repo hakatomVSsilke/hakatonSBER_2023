@@ -95,7 +95,7 @@ const StatusColumnComponent = ({name, color, id}: any) => {
             </div>
 
             <div className='status_column-list'>
-                <FeedbackComponent key = {'empty'} item = {{name: 'empty'}} statusName = {name}/>
+                <FeedbackComponent key = {'empty'} item = {{name: 'empty'}} statusName = {name} className={"empty"}/>
 
                 {
                     feedbacks.map((item: any) => {

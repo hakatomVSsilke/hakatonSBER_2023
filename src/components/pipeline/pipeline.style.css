@@ -4,22 +4,27 @@
     padding: 10px;
 }
 .pipeline_page-block .element-wrapper {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .pipeline_page-block .wrapper {
-    height: 20px;
-    background-color: red;
+    height: 30px;
+    background-color: #d0cdcd;
+    border-radius: 4px;
+    opacity: 0;
 }
 
 .pipeline_page-block .wrapper.draggedOver {
-    background-color: green;
+    padding: 20px 25px;
+    margin-top: 5px;
+    opacity: 1;
 }
 
 .pipeline_page-block .feedback-block {
-    border: 1px solid black;
-    padding: 10px;
+    border: 1px solid #afadad;
+    padding: 20px 25px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .pipeline_page-block #empty {
@@ -28,4 +33,8 @@
 
 .pipeline_page-block .status_column-list .element-wrapper:nth-child(2) .wrapper[data-position="top"] {
     display: none;
+}
+
+.empty {
+    visibility: hidden;
 }

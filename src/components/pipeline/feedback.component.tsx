@@ -7,7 +7,7 @@ import {
     dragLeave,
 } from "../../slices/feedback/feedbackPipeline.slice";
 
-const FeedbackComponent = ({item, statusName}: any) => {
+const FeedbackComponent = ({item, statusName, className}: any) => {
     const dispatch= useDispatch();
     const itemId = item.id;
     const itemName = item.name;
@@ -37,11 +37,13 @@ const FeedbackComponent = ({item, statusName}: any) => {
                 draggable='true'
                 onDragStart = {() => dispatch(dragStart({item, statusFrom: statusName}))}
                 id = {itemId}
-                className = {"feedback-block"}
+                className = {"feedback-block " + className}
                 key={itemId}
+
             >
                 {itemName}
             </div>
+
 
             <div
                 className={'wrapper'}
