@@ -1,0 +1,30 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+
+.blockUsers {
+    border: none;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.tableInfo{
+    margin-left: 10px;
+    border-spacing: 15px;
+}
+
+th {
+    padding: 0 10px;
+    text-align: center;
+}
+
+td {
+    padding: 0 10px;
+    text-align: center;
+}

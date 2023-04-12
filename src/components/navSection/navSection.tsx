@@ -25,7 +25,7 @@ const navSection: React.FunctionComponent = () => {
 
                     Отделы
                 </Link>
-                <Link to='' className = {pathName === '/human/pipeline_view' ? 'active' : ''}>
+                <Link to='applicants' className = {pathName === '/applicants' ? 'active' : ''}>
                     <IconComponent name = "human" />
 
                     Соискатели
