@@ -28,17 +28,24 @@ export const feedbackPipelineSlice = createSlice({
         },
         // TODO когда с бэка будут данные прилетать - заменить поиск с name на id
         drop: (state, action) => {
-            const data             = action.payload;
+            const data = action.payload;
+
+            if (!data.from.item.id || data.dropOnElementId == data.from.item.id) {
+                return;
+            }
+
             const droppedInItems   = state.items[data.statusTo];
             const removedFromItems = state.items[data.from.statusFrom];
 
             let elementIndex = droppedInItems.findIndex(el => el.id == data.dropOnElementId);
-            let newArray = droppedInItems.filter(el => el.id != data.from.item.name);
-            let filteredRemovedFromItems = removedFromItems.filter(el => el.id != data.from.item.name);
+            let newArray = droppedInItems.filter(el => el.id != data.from.item.id);
+            let filteredRemovedFromItems = removedFromItems.filter(el => el.id != data.from.item.id);
 
             elementIndex++;
 
             newArray = [].concat(newArray.slice(0, elementIndex), data.from.item, newArray.slice(elementIndex));
+
+            console.log(filteredRemovedFromItems.map(el => el.name))
 
             state.items[data.statusTo] = newArray;
 
