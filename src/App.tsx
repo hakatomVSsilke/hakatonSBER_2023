@@ -10,11 +10,15 @@ const FeedBackPipelinePageComponent = React.lazy(
 	() => import("./sections/feedback/feedbackPipeline.section")
 );
 const DepartmentsComponent = React.lazy(
-	() => import("./sections/departments/departments")
+	() => import("./sections/departments/departments.section")
 );
 
 const UsersComponent = React.lazy(
 	() => import("./sections/users/users.section")
+);
+
+const ApplicantsComponent = React.lazy(
+	() => import("./sections/applicants/applicants.section")
 );
 
 function App() {
@@ -39,6 +43,7 @@ function App() {
 
 				<Route path="departments" element={<DepartmentsComponent />} />
 
+				<Route path="applicants" element={<ApplicantsComponent />} />
 
 				<Route path="users" element={<UsersComponent />} />
 			</Route>
