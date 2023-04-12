@@ -10,14 +10,17 @@ export const authSlice = createSlice({
     name: 'authSlice',
     initialState,
     reducers: {
-        login: (state) => {
-            console.log(state, 'login')
+        login: (state, action ) => {
+            console.log(action)
         },
-        logout: (state) => {
+        logout: (state, action ) => {
             console.log(state, 'logout')
         },
-        getUserId: (state) => {
+        getUserId: (state, action ) => {
             console.log(state, 'getUserId')
+        },
+        resetPassword: (state, action)  => {
+            console.log(action)
         }
     }
 });

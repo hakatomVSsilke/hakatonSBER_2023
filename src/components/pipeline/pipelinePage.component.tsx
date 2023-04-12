@@ -1,8 +1,7 @@
-import React, {useEffect} from "react";
+import React from "react";
 
 import StatusColumnComponent from "./statusColumn.component";
-import pipelineStore from "../../stores/pipeline.store";
-import {Provider, useDispatch, useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import './pipeline.style.css';
 import {setData} from "../../slices/feedback/feedbackPipeline.slice";
