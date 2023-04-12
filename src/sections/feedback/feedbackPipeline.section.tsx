@@ -7,19 +7,44 @@ import pipelineStore from "../../stores/pipeline.store";
 
 const FeedBackPipelinePageComponent = () => {
     const backData = {
-        test1: {statusName: 'test1', feedbacks: [
-            {name: '1'}, {name: '2'}, {name: '3'}
-        ]},
-        test2: {statusName: 'test2', feedbacks: [{name: '4'}, {name: '5'}, {name: '6'}]},
-        test3: {statusName: 'test3', feedbacks: [{name: '6'}, {name: '8'}, {name: '9'}]},
+        test1: {
+            statusName: 'test1', feedbacks: [
+                {
+                    id: 1,
+                    name: 'ФИО',
+                    response_date: '29.01.2023',
+                    status_id: 2
+                }
+            ]
+        },
+        test2: {
+            statusName: 'test2', feedbacks: [
+                {
+                    id: 1,
+                    name: 'ФИО',
+                    response_date: '29.01.2023',
+                    status_id: 2
+                }
+            ]
+        },
+        test3: {
+            statusName: 'test3', feedbacks: [
+                {
+                    id: 1,
+                    name: 'ФИО',
+                    response_date: '29.01.2023',
+                    status_id: 2
+                }
+            ]
+        },
     };
 
     return (
         <>
-            <FeedbackSectionHeader  />
+            <FeedbackSectionHeader/>
 
             <Provider store={pipelineStore}>
-                <PipelinePageComponent items = {backData}/>
+                <PipelinePageComponent items={backData}/>
             </Provider>
         </>
     );
