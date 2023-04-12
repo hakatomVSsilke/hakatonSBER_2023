@@ -1,3 +1,7 @@
 .title-component {
     margin: 0;
 }
+
+.title-component[data-level="1"] {
+    font-size: 35px;
+}
