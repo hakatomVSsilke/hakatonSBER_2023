@@ -1,18 +1,22 @@
-import "./departments.css"
+import "./departments.css";
 import {TitleComponent} from "../../components/elements/title/title.component";
 import ButtonComponent from "../../components/elements/button/button.component";
-import React from "react";
-
-
+import React, {useState} from "react";
 
 function Departments() {
+
+	const handleMessageBox = () => {
+		console.log(1);
+	}
+
+
 	return (
 		<div id="container">
 			<div className="department">
 				<TitleComponent text = "Отдел менеджмента"/>
 				<div className="info">
 					<span>Количество менеджеров 8/10</span>
-					<ButtonComponent text="Сообщение"/>
+					<ButtonComponent text="Сообщение" className="btn" onClick={() => handleMessageBox}/>
 				</div>
 			</div>
 

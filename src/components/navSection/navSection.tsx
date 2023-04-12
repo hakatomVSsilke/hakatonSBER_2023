@@ -30,6 +30,14 @@ const navSection: React.FunctionComponent = () => {
 
                     Соискатели
                 </Link>
+
+
+                <Link to='/users' className={pathName === '/users' ? 'active' : ''}>
+                    <IconComponent name = "human"/>
+
+
+                    Пользователи
+                </Link>
             </div>
         </div>
     );

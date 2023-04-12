@@ -13,6 +13,10 @@ const DepartmentsComponent = React.lazy(
 	() => import("./sections/departments/departments")
 );
 
+const UsersComponent = React.lazy(
+	() => import("./sections/users/users.section")
+);
+
 function App() {
 	const [userRouter, setUserRouter]: any = useState(null);
 
@@ -34,6 +38,9 @@ function App() {
 				</Route>
 
 				<Route path="departments" element={<DepartmentsComponent />} />
+
+
+				<Route path="users" element={<UsersComponent />} />
 			</Route>
 		);
 	};
