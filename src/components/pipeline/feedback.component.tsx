@@ -9,7 +9,7 @@ import {
 
 const FeedbackComponent = ({item, statusName}: any) => {
     const dispatch= useDispatch();
-    const itemId = item.name;
+    const itemId = item.id;
     const itemName = item.name;
     const dragStartElement = useSelector((state: any) => state.feedbackPipelineSlice.dragStartElement);
 

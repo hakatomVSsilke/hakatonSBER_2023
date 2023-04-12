@@ -1,0 +1,19 @@
+input.form-control {
+    border: 1px solid #9f9f9f;
+    border-radius: 4px;
+    padding: 5px 6px;
+    transition: 0.1s;
+}
+
+input.form-control:focus {
+    border: 1px solid #08a552;
+    box-shadow: 0 0 1px #08a552;
+}
+
+input.form-control.full {
+    display: block;
+}
+
+input.form-control.center {
+    margin: 0 auto;
+}

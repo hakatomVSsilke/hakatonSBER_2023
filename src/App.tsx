@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthorizedPage from "./pages/authorizedPage";
 
 import "./App.css";
+import AuthPage from "./pages/authorisation/auth.page";
 
 const TitlePage = React.lazy(() => import("./sections/titlePage"));
 const FeedBackPipelinePageComponent = React.lazy(
@@ -29,6 +30,14 @@ function App() {
 	}, []);
 
 	const userRouterHandler = (isAuthorized: boolean) => {
+		if (!isAuthorized) {
+			setUserRouter(
+				<Route path='/*' element={<AuthPage />} />
+			);
+
+			return;
+		}
+
 		setUserRouter(
 			<Route path="/" element={<AuthorizedPage />}>
 				<Route index element={<TitlePage />} />
