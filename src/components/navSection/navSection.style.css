@@ -15,7 +15,7 @@
 }
 
 #nav_section-block #nav_section_buttons-block a[href="/feedback/pipeline_view"] {
-	padding-bottom: 0;
+	padding-bottom: 2px;
 }
 
 #nav_section-block #nav_section_buttons-block a.active * {
