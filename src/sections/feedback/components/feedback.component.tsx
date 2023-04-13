@@ -6,7 +6,8 @@ import {
     dragStart,
     dragLeave,
     dragOver,
-    setElementId
+    setElementId,
+    clearAll
 } from "../../../slices/feedback/feedbackPipeline.slice";
 
 const FeedbackComponent = ({item, statusName, className = ''}: any) => {
@@ -22,11 +23,12 @@ const FeedbackComponent = ({item, statusName, className = ''}: any) => {
     }
 
     const test = (e: any) => {
-        console.log(e)
 
         let element = e.target.closest('.feedback-block');
 
-        if (!element) {
+
+        if (!element || element.getAttribute('id') == 'el_' + dragStartElement.item.id) {
+            dispatch(clearAll());
             return;
         }
 
@@ -35,9 +37,8 @@ const FeedbackComponent = ({item, statusName, className = ''}: any) => {
         element.closest('.element-wrapper').previousSibling.querySelector('.wrapper').classList.add('draggedOver');
 
         document.querySelectorAll(`.wrapper.draggedOver:not([data-id="${elementId}"])`).forEach(element => {
-            console.log(elementId, `.wrapper.draggedOver:not([data-id="${elementId}"])`)
-            console.log(element)
-            // element.classList.remove('draggedOver');
+
+            element.classList.remove('draggedOver');
         })
     }
 
@@ -107,7 +108,7 @@ const FeedbackComponent = ({item, statusName, className = ''}: any) => {
                 onDragOver ={(e:any) => dragOverHandler(e)}
                 onDrop = {(e: any) => dropHandler(e)}
                 onDragEnd = {() => dispatch(dragEnd())}
-                data-id = {itemId}
+                data-id = {'el_' + itemId}
                 data-position = "bottom"
             >
             </div>

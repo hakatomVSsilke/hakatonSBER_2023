@@ -1,7 +1,7 @@
 #nav_section-block {
 	height: 100vh;
 	width: max-content;
-	background-color: #08a552;
+	background: linear-gradient(18deg, #fff14d, #6de935);
 	padding: 0 10px;
 	max-width: 110px;
 	position: fixed;
@@ -14,16 +14,55 @@
 	text-align: center;
 }
 
-#nav_section-block #nav_section_buttons-block a {
-	color: black;
-	text-decoration: none;
-	margin: 10px 0;
+#nav_section-block #nav_section_buttons-block a[href="/feedback/pipeline_view"] {
+	padding-bottom: 0;
 }
 
-#nav_section-block #nav_section_buttons-block a.active {
-	color: white !important;
-	font-weight: bold;
-}
 #nav_section-block #nav_section_buttons-block a.active * {
 	fill: none;
+}
+
+#nav_section-block #nav_section_buttons-block a {
+	border: 1px solid #c5c5c5;
+	text-decoration: none;
+	margin: 10px 0;
+	padding: 7px;
+	border-radius: 17px;
+	box-shadow: 0 0 6px 0 #c7c7c7;
+	background-color: #ffffff;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: 0.2s;
+}
+
+#nav_section-block #nav_section_buttons-block a span {
+	height: 31px;
+}
+
+#nav_section-block #nav_section_buttons-block a:hover {
+	overflow: visible;
+}
+
+#nav_section-block #nav_section_buttons-block a:active {
+	transform: scale(0.98);
+	box-shadow: none;
+}
+
+#nav_section-block #nav_section_buttons-block a:hover::after {
+	opacity: 1;
+}
+
+#nav_section-block #nav_section_buttons-block a::after {
+	content: attr(data-title);
+	background-color: #a2ec3d;
+	position: absolute;
+	left: 63px;
+	padding: 7px;
+	color: black;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	transition: 0.1s;
 }

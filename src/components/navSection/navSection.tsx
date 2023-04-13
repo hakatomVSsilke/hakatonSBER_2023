@@ -10,33 +10,33 @@ const navSection: React.FunctionComponent = () => {
     return (
         <div id = "nav_section-block">
             <div id = "nav_section_buttons-block">
-                <Link to='/feedback/pipeline_view' className = {pathName === '/feedback/pipeline_view' ? 'active' : ''}>
+                <Link data-title = {'Отклики'} to='/feedback/pipeline_view' className = {pathName === '/feedback/pipeline_view' ? 'active' : ''}>
                     <IconComponent name = "applicants"/>
 
-                    Отклики
+                    {/*Отклики*/}
                 </Link>
-                <Link to='tasks' className = {pathName === '/tasks' ? 'active' : ''}>
+                <Link data-title = {'Задачи'} to='tasks' className = {pathName === '/tasks' ? 'active' : ''}>
                     <IconComponent name = "tasks" />
 
-                    Задачи
+                    {/*Задачи*/}
                 </Link>
-                <Link to='/departments' className = {pathName === '/departments' ? 'active' : ''}>
+                <Link data-title = {'Отделы'} to='/departments' className = {pathName === '/departments' ? 'active' : ''}>
                     <IconComponent name = "departments" />
 
-                    Отделы
+                    {/*Отделы*/}
                 </Link>
-                <Link to='applicants' className = {pathName === '/applicants' ? 'active' : ''}>
-                    <IconComponent name = "human" />
+                <Link data-title = {'Соискатели'} to='applicants' className = {pathName === '/applicants' ? 'active' : ''}>
+                    <IconComponent name = "users" />
 
-                    Соискатели
+                    {/*Соискатели*/}
                 </Link>
 
 
-                <Link to='/users' className={pathName === '/users' ? 'active' : ''}>
+                <Link data-title = {'Пользователи'} to='/users' className={pathName === '/users' ? 'active' : ''}>
                     <IconComponent name = "human"/>
 
 
-                    Пользователи
+                    {/*Пользователи*/}
                 </Link>
             </div>
         </div>

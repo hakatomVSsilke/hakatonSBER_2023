@@ -2,54 +2,45 @@ import React from "react";
 
 const icons: any = {
     'human': `
-        <svg width="40" height="49" viewBox="0 0 40 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <path d="M20.5 23.5C26.5751 23.5 31.5 18.5751 31.5 12.5C31.5 6.42487 26.5751 1.5 20.5 1.5C14.4249 1.5 9.5 6.42487 9.5 12.5C9.5 18.5751 14.4249 23.5 20.5 23.5Z" stroke="black" stroke-width="2"/>
-             <path d="M2 49V33C2 30.7909 3.79086 29 6 29H34C36.2091 29 38 30.7909 38 33V49" stroke="black" stroke-width="2"/>
+        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 23.5434V29C30 29.5523 29.5523 30 29 30H16H2C1.44772 30 1 29.5523 1 29V23.1396C1 21.0579 2.68754 19.3704 4.76923 19.3704H15H25.8269C28.1316 19.3704 30 21.2387 30 23.5434Z" fill="white" stroke="#0E941B" stroke-width="2"/>
+        <path d="M21.6539 8.03704C21.6539 12.0361 18.7924 15.0741 15.5 15.0741C12.2076 15.0741 9.34616 12.0361 9.34616 8.03704C9.34616 4.03797 12.2076 1 15.5 1C18.7924 1 21.6539 4.03797 21.6539 8.03704Z" fill="white" stroke="#0E941B" stroke-width="2"/>
         </svg>
     `,
     'departments': `
-        <svg width="59" height="50" viewBox="0 0 59 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.0556 31.102C16.0556 33.4137 14.2818 35.2041 12.1944 35.2041C10.107 35.2041 8.33334 33.4137 8.33334 31.102C8.33334 28.7904 10.107 27 12.1944 27C14.2818 27 16.0556 28.7904 16.0556 31.102Z" stroke="black" stroke-width="2"/>
-            <path d="M5 46V41.8367C5 39.6276 6.79086 37.8367 9 37.8367H15C17.2091 37.8367 19 39.6276 19 41.8367V46" stroke="black" stroke-width="2"/>
-            <path d="M33.0556 8.10204C33.0556 10.4137 31.2818 12.2041 29.1944 12.2041C27.107 12.2041 25.3333 10.4137 25.3333 8.10204C25.3333 5.79041 27.107 4 29.1944 4C31.2818 4 33.0556 5.79041 33.0556 8.10204Z" stroke="black" stroke-width="2"/>
-            <path d="M22 23V18.8367C22 16.6276 23.7909 14.8367 26 14.8367H32C34.2091 14.8367 36 16.6276 36 18.8367V23" stroke="black" stroke-width="2"/>
-            <path d="M51.0556 31.102C51.0556 33.4137 49.2818 35.2041 47.1944 35.2041C45.107 35.2041 43.3333 33.4137 43.3333 31.102C43.3333 28.7904 45.107 27 47.1944 27C49.2818 27 51.0556 28.7904 51.0556 31.102Z" stroke="black" stroke-width="2"/>
-            <path d="M40 46V41.8367C40 39.6276 41.7909 37.8367 44 37.8367H50C52.2091 37.8367 54 39.6276 54 41.8367V46" stroke="black" stroke-width="2"/>
-            <path d="M33.0556 31.102C33.0556 33.4137 31.2818 35.2041 29.1944 35.2041C27.107 35.2041 25.3333 33.4137 25.3333 31.102C25.3333 28.7904 27.107 27 29.1944 27C31.2818 27 33.0556 28.7904 33.0556 31.102Z" stroke="black" stroke-width="2"/>
-            <path d="M22 46V41.8367C22 39.6276 23.7909 37.8367 26 37.8367H32C34.2091 37.8367 36 39.6276 36 41.8367V46" stroke="black" stroke-width="2"/>
-            <rect x="1" y="1" width="57" height="48" rx="13" stroke="black" stroke-width="2"/>
-            </svg>
-    `,
-    'tasks': `
-        <svg width="50" height="49" viewBox="0 0 50 49" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto">
-            <rect x="1" y="1" width="48" height="47" rx="2" stroke="black" stroke-width="2"/>
-            <path d="M6 36.5L9 39L13 35" stroke="black" stroke-width="2"/>
-            <path d="M6 8.5L9 11L13 7" stroke="black" stroke-width="2"/>
-            <path d="M6 29.5L9 32L13 28" stroke="black" stroke-width="2"/>
-            <path d="M6 22.5L9 25L13 21" stroke="black" stroke-width="2"/>
-            <path d="M6 15.5L9 18L13 14" stroke="black" stroke-width="2"/>
-            <line x1="17" y1="9" x2="39" y2="9" stroke="black" stroke-width="2"/>
-            <line x1="17" y1="37" x2="39" y2="37" stroke="black" stroke-width="2"/>
-            <line x1="17" y1="30" x2="39" y2="30" stroke="black" stroke-width="2"/>
-            <line x1="17" y1="23" x2="39" y2="23" stroke="black" stroke-width="2"/>
-            <line x1="17" y1="16" x2="39" y2="16" stroke="black" stroke-width="2"/>
+        <svg width="38" height="27" viewBox="0 0 38 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23 21.005V25C23 25.5523 22.5523 26 22 26H12.3871H2C1.44772 26 1 25.5523 1 25V20.6923C1 19.2054 2.20539 18 3.69231 18H11.6129H19.995C21.6546 18 23 19.3454 23 21.005Z" fill="white" stroke="#0E941B" stroke-width="2"/>
+        <path d="M17.2857 8.57576C17.2857 11.7204 14.9201 14.1515 12.1429 14.1515C9.36559 14.1515 7 11.7204 7 8.57576C7 5.43112 9.36559 3 12.1429 3C14.9201 3 17.2857 5.43112 17.2857 8.57576Z" fill="white" stroke="#0E941B" stroke-width="2"/>
+        <path d="M17 15H23.2254H32.5223V15C34.9755 15 36.9643 16.9888 36.9643 19.442V22.6494C36.9643 22.9049 36.9643 23.0326 36.9411 23.1385C36.8575 23.5197 36.5597 23.8174 36.1785 23.901C36.0727 23.9242 35.9451 23.9242 35.69 23.9242C33.9969 23.9242 30.9647 23.9242 28.7738 23.9242H23.2254" stroke="#0E941B" stroke-width="2"/>
+        <path d="M30.2857 6.57576C30.2857 9.7204 27.9201 12.1515 25.1429 12.1515C22.3656 12.1515 20 9.7204 20 6.57576C20 3.43112 22.3656 1 25.1429 1C27.9201 1 30.2857 3.43112 30.2857 6.57576Z" fill="white" stroke="#0E941B" stroke-width="2"/>
         </svg>
     `,
+    'tasks': `
+         <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 1H26C28.2091 1 30 2.79086 30 5V9.24038V15.7981V26C30 28.2091 28.2091 30 26 30H5C2.79086 30 1 28.2091 1 26V5C1 2.79086 2.79086 1 5 1Z" fill="white" stroke="#0E941B" stroke-width="2"/>
+        <line x1="6.02777" y1="7.37839" x2="24.9722" y2="7.37839" stroke="#0E941B" stroke-width="2"/>
+        <line x1="6.02777" y1="19.1081" x2="19.8055" y2="19.1081" stroke="#0E941B" stroke-width="2"/>
+        <line x1="6.02777" y1="13.2433" x2="24.9722" y2="13.2433" stroke="#0E941B" stroke-width="2"/>
+        </svg>
+
+    `,
     'applicants': `
-      <svg width="71" height="49" viewBox="0 0 71 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="69" height="37" rx="1" stroke="black" stroke-width="2"/>
-        <line x1="4" y1="6.5" x2="39" y2="6.5" stroke="black"/>
-        <line x1="41" y1="6.5" x2="64" y2="6.5" stroke="black"/>
-        <line x1="8" y1="11.5" x2="60" y2="11.5" stroke="black"/>
-        <line x1="5" y1="16.5" x2="31" y2="16.5" stroke="black"/>
-        <line x1="35" y1="16.5" x2="43" y2="16.5" stroke="black"/>
-        <line x1="47" y1="16.5" x2="61" y2="16.5" stroke="black"/>
-        <line x1="7" y1="23.5" x2="29" y2="23.5" stroke="black"/>
-        <line x1="8" y1="29.5" x2="28" y2="29.5" stroke="black"/>
-        <line x1="31" y1="29.5" x2="50" y2="29.5" stroke="black"/>
-        <line x1="38" y1="23.5" x2="60" y2="23.5" stroke="black"/>
-        <path d="M59.3166 37.9892L54.5081 46.8561L49.6894 38.0092L59.3166 37.9892Z" stroke="black" stroke-width="2"/>
-     </svg>
+        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 1H28C29.1046 1 30 1.89543 30 3V20.4595C30 21.564 29.1046 22.4595 28 22.4595H7.09801C5.93056 22.4595 4.8301 23.0047 4.12292 23.9336C3.11435 25.2584 1 24.5452 1 22.8801V21.3649V3C1 1.89543 1.89543 1 3 1Z" fill="white" stroke="#0E941B" stroke-width="2"/>
+        <path d="M4 12H20" stroke="#0E941B" stroke-width="2"/>
+        <line x1="4" y1="17.5" x2="20" y2="17.5" stroke="#0E941B"/>
+        <path d="M21 12H26" stroke="#0E941B" stroke-width="2"/>
+        </svg>
+
+
+    `,
+    'users': `
+        <svg width="38" height="27" viewBox="0 0 38 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23 21.005V25C23 25.5523 22.5523 26 22 26H12.3871H2C1.44772 26 1 25.5523 1 25V20.6923C1 19.2054 2.20539 18 3.69231 18H11.6129H19.995C21.6546 18 23 19.3454 23 21.005Z" fill="white" stroke="#0E941B" stroke-width="2"/>
+        <path d="M17.2857 8.57576C17.2857 11.7204 14.9201 14.1515 12.1429 14.1515C9.36559 14.1515 7 11.7204 7 8.57576C7 5.43112 9.36559 3 12.1429 3C14.9201 3 17.2857 5.43112 17.2857 8.57576Z" fill="white" stroke="#0E941B" stroke-width="2"/>
+        <path d="M17 15H23.2254H32.5223V15C34.9755 15 36.9643 16.9888 36.9643 19.442V22.6494C36.9643 22.9049 36.9643 23.0326 36.9411 23.1385C36.8575 23.5197 36.5597 23.8174 36.1785 23.901C36.0727 23.9242 35.9451 23.9242 35.69 23.9242C33.9969 23.9242 30.9647 23.9242 28.7738 23.9242H23.2254" stroke="#0E941B" stroke-width="2"/>
+        <path d="M30.2857 6.57576C30.2857 9.7204 27.9201 12.1515 25.1429 12.1515C22.3656 12.1515 20 9.7204 20 6.57576C20 3.43112 22.3656 1 25.1429 1C27.9201 1 30.2857 3.43112 30.2857 6.57576Z" fill="white" stroke="#0E941B" stroke-width="2"/>
+        </svg>
     `
 };
 

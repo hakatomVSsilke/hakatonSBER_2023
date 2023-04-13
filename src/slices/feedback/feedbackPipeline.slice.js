@@ -17,6 +17,11 @@ export const feedbackPipelineSlice = createSlice({
         setElementId: (state, action) => {
             state.excludedId = action.payload.payload;
         },
+        clearAll: (state) => {
+            document.querySelectorAll(`.draggedOver`).forEach(element => {
+                element.classList.remove('draggedOver');
+            })
+        },
         dragStart: (state, action) => {
             state.dragStartElement = action.payload;
         },
@@ -81,7 +86,8 @@ export const {
     drop,
     setData,
     dragLeave,
-    setElementId
+    setElementId,
+    clearAll
 } = feedbackPipelineSlice.actions;
 
 export default feedbackPipelineSlice.reducer;
