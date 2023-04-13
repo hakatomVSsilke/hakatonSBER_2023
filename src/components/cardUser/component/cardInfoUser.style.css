@@ -1,0 +1,36 @@
+body {
+    font-size: 20px;
+}
+
+#container {
+    height: 100vh;
+}
+
+#head {
+    border-bottom: 8px solid #09d109;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+#head span {
+    margin: 10px;
+    font-weight: 500;
+}
+
+#blockInfoUser {
+    border: 1px solid gray;
+    width: 40%;
+    height: 100%;
+}
+
+#information {
+    display: flex;
+    flex-direction: column;
+}
+
+#information span {
+    margin: 10px;
+    display: flex;
+}

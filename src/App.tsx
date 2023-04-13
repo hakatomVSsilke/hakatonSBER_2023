@@ -22,6 +22,10 @@ const ApplicantsComponent = React.lazy(
 	() => import("./sections/applicants/applicants.section")
 );
 
+const TasksComponent = React.lazy(
+	() => import("./sections/tasks/tasks.section")
+);
+
 function App() {
 	const [userRouter, setUserRouter]: any = useState(null);
 
@@ -49,6 +53,8 @@ function App() {
 					/>
 					<Route path="list_view" element={<FeedBackPipelinePageComponent />} />
 				</Route>
+
+				<Route path="tasks" element={<TasksComponent />}/>
 
 				<Route path="departments" element={<DepartmentsComponent />} />
 
