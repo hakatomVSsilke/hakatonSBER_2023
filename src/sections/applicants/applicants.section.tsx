@@ -3,6 +3,7 @@ import {TitleComponent} from "../../components/elements/title/title.component";
 import ButtonComponent from "../../components/elements/button/button.component";
 import "./applicantsStyle.css";
 import TableListComponent from "../../components/tableList/tableList.component";
+import Header from "../../components/header/header";
 
 
 const Applicants = () => {
@@ -20,15 +21,9 @@ const Applicants = () => {
     ];
 
     return (
-        <div id="container">
-            <div id="header">
-                <TitleComponent text='Соискатели'/>
-
-                <ButtonComponent text='Удалить'/>
-            </div>
-
-            <TableListComponent theadElements = {thead} tbodyElements = {tbody}/>
-        </div>
+        <>
+            <TableListComponent theadElements={thead} tbodyElements={tbody}/>
+        </>
     );
 };
 
