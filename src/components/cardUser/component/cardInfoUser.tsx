@@ -12,7 +12,7 @@ const CardInfoUser = () => {
     ];
 
     return (
-        <div id="container">
+        <div className="container">
             <div id="blockInfoUser">
                 <div id="head">
                     {head.map(heads =>
