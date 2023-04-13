@@ -15,7 +15,7 @@ const navSection: React.FunctionComponent = () => {
 
                     Отклики
                 </Link>
-                <Link to='' className = {pathName === '/tasks' ? 'active' : ''}>
+                <Link to='tasks' className = {pathName === '/tasks' ? 'active' : ''}>
                     <IconComponent name = "tasks" />
 
                     Задачи

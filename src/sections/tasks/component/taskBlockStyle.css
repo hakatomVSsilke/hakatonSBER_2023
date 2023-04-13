@@ -1,0 +1,7 @@
+.taskBlock {
+    border: 1px solid #bdb6b6;
+    padding: 10px 25px;
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+}
