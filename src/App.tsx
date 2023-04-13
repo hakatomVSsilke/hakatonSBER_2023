@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthorizedPage from "./pages/authorizedPage";
 
@@ -8,69 +8,62 @@ import AuthPage from "./pages/authorisation/auth.page";
 
 const TitlePage = React.lazy(() => import("./sections/titlePage"));
 const FeedBackPipelinePageComponent = React.lazy(
-    () => import("./sections/feedback/feedbackPipeline.section")
+	() => import("./sections/feedback/feedbackPipeline.section")
 );
 const DepartmentsComponent = React.lazy(
-    () => import("./sections/departments/departments.section")
+	() => import("./sections/departments/departments.section")
 );
 
 const UsersComponent = React.lazy(
-    () => import("./sections/users/users.section")
+	() => import("./sections/users/users.section")
 );
 
 const ApplicantsComponent = React.lazy(
-    () => import("./sections/applicants/applicants.section")
+	() => import("./sections/applicants/applicants.section")
 );
-
-const TasksComponent = React.lazy(
-    () => import("./sections/tasks/tasks.section")
-);
-
 
 function App() {
-    const [userRouter, setUserRouter]: any = useState(null);
+	const [userRouter, setUserRouter]: any = useState(null);
 
-    useEffect(() => {
-        userRouterHandler(true);
-    }, []);
+	useEffect(() => {
+		userRouterHandler(true);
+	}, []);
 
-    const userRouterHandler = (isAuthorized: boolean) => {
-        if (!isAuthorized) {
-            setUserRouter(
-                <Route path='/*' element={<AuthPage/>}/>
-            );
+	const userRouterHandler = (isAuthorized: boolean) => {
+		if (!isAuthorized) {
+			setUserRouter(
+				<Route path='/*' element={<AuthPage />} />
+			);
 
-            return;
-        }
+			return;
+		}
 
-        setUserRouter(
-            <Route path="/" element={<AuthorizedPage/>}>
-                <Route index element={<TitlePage/>}/>
-                <Route path="feedback">
-                    <Route
-                        index
-                        path="pipeline_view"
-                        element={<FeedBackPipelinePageComponent/>}
-                    />
-                    <Route path="list_view" element={<FeedBackPipelinePageComponent/>}/>
-                </Route>
+		setUserRouter(
+			<Route path="/" element={<AuthorizedPage />}>
+				<Route index element={<TitlePage />} />
+				<Route path="feedback">
+					<Route
+						index
+						path="pipeline_view"
+						element={<FeedBackPipelinePageComponent />}
+					/>
+					<Route path="list_view" element={<FeedBackPipelinePageComponent />} />
+				</Route>
 
-                <Route path="tasks" element={<TasksComponent/>}/>
+				<Route path="departments" element={<DepartmentsComponent />} />
 
-                <Route path="departments" element={<DepartmentsComponent/>}/>
+				<Route path="applicants" element={<ApplicantsComponent />} />
 
-                <Route path="applicants" element={<ApplicantsComponent/>}/>
+				<Route path="users" element={<UsersComponent />} />
+			</Route>
+		);
+	};
 
-                <Route path="users" element={<UsersComponent/>}/>
-            </Route>
-        );
-    };
-
-    return (
-        <BrowserRouter>
-            <Routes>{userRouter}</Routes>
-        </BrowserRouter>
-    );
+	return (
+		<BrowserRouter>
+			<Routes>{userRouter}</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;

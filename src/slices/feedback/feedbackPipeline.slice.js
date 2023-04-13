@@ -1,9 +1,10 @@
-import React         from 'react';
+import React from 'react';
 import {createSlice, current} from '@reduxjs/toolkit';
 
 const initialState = {
     items: {},
     dragStartElement: {},
+    excludedId: ''
 };
 
 export const feedbackPipelineSlice = createSlice({
@@ -13,21 +14,38 @@ export const feedbackPipelineSlice = createSlice({
         setData: (state, action) => {
             state.items[action.payload.statusName] = action.payload.feedbacks;
         },
+        setElementId: (state, action) => {
+            state.excludedId = action.payload.payload;
+        },
         dragStart: (state, action) => {
             state.dragStartElement = action.payload;
         },
-        dragEnd: () => {
+        dragEnd: (state) => {
             document.querySelectorAll('.draggedOver').forEach(element => {
                 element.classList.remove('draggedOver');
+            })
+
+            state.mouseMoving = false;
+        },
+        dragLeave: (state, action) => {
+            let excludedId = state.excludedId;
+
+            if (typeof excludedId !== 'object') {
+                excludedId = ':not(#el_' + excludedId + ')';
+            } else {
+                excludedId = '';
+            }
+            document.querySelectorAll(`.draggedOver${excludedId}`).forEach(element => {
+                // element.classList.remove('draggedOver');
             })
         },
-        dragLeave: () => {
-            document.querySelectorAll('.draggedOver').forEach(element => {
-                element.classList.remove('draggedOver');
-            })
+        dragOver: (state, action) => {
+            console.log(action)
         },
         // TODO когда с бэка будут данные прилетать - заменить поиск с name на id
         drop: (state, action) => {
+            state.excludedId = '';
+
             const data = action.payload;
 
             if (!data.from.item.id || data.dropOnElementId == data.from.item.id) {
@@ -45,8 +63,6 @@ export const feedbackPipelineSlice = createSlice({
 
             newArray = [].concat(newArray.slice(0, elementIndex), data.from.item, newArray.slice(elementIndex));
 
-            console.log(filteredRemovedFromItems.map(el => el.name))
-
             state.items[data.statusTo] = newArray;
 
             if (data.from.statusFrom === data.statusTo) {
@@ -58,6 +74,14 @@ export const feedbackPipelineSlice = createSlice({
     }
 });
 
-export const {dragStart, dragEnd,drop, setData, dragLeave} = feedbackPipelineSlice.actions;
+export const {
+    dragOver,
+    dragStart,
+    dragEnd,
+    drop,
+    setData,
+    dragLeave,
+    setElementId
+} = feedbackPipelineSlice.actions;
 
 export default feedbackPipelineSlice.reducer;

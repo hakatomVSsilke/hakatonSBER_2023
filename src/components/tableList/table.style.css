@@ -1,0 +1,29 @@
+.table {
+    margin: 0 auto;
+    width: 97%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    text-align:center ;
+}
+
+.table .table-head {
+    border: 1px solid #a5a5a5;
+    margin-top: 12px;
+    background-color: #00ff78;
+}
+
+.table .table-head .column-name {
+    padding: 15px;
+}
+
+.table tbody .table-body {
+    box-shadow: 0 0 3px 0 #c5c5c5;
+}
+
+.table tbody .table-body:nth-child(even) {
+    background-color: #ebebeb;
+}
+
+.table .table-body .column-value {
+    padding: 15px;
+}

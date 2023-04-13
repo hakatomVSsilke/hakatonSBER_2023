@@ -2,6 +2,7 @@ import { Provider } from "react-redux";
 import PipelinePageComponent from "../../components/pipeline/pipelinePage.component";
 import FeedbackSectionHeader from "../../sections/feedback/components/feedbackSectionHeader";
 import pipelineStore from "../../stores/pipeline.store";
+import FeedbackComponent from "./components/feedback.component";
 
 const FeedBackPipelinePageComponent = () => {
 	const backData: any = [
@@ -15,7 +16,7 @@ const FeedBackPipelinePageComponent = () => {
 			<FeedbackSectionHeader />
 
 			<Provider store={pipelineStore}>
-				<PipelinePageComponent items={backData} />
+				<PipelinePageComponent items={backData} Component = {(id: any, item: any, name: any, className: string = '') => <FeedbackComponent key = {id} item = {item} statusName = {name} className = {className}/>}/>
 			</Provider>
 		</>
 	);

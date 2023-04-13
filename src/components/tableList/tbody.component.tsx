@@ -2,15 +2,15 @@ import React from "react";
 
 const TbodyComponent = ({elements}: any) => {
     return (
-        <div className = "table-body">
+        <tr className = "table-body">
             {
-                elements.map((element: any) => {
-                    return <div className="column-value">
+                elements.map((element: any, index: number) => {
+                    return <td key ={index} className="column-value">
                         {element.name}
-                    </div>;
+                    </td>;
                 })
             }
-        </div>
+        </tr>
     );
 }
 

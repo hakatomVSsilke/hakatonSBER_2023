@@ -2,12 +2,21 @@ import React from 'react';
 import {TitleComponent} from "../../components/elements/title/title.component";
 import ButtonComponent from "../../components/elements/button/button.component";
 import "./applicantsStyle.css";
+import TableListComponent from "../../components/tableList/tableList.component";
 
 
 const Applicants = () => {
-    const theadColumns = [{name: 'ФИО'}, {name: 'Вакансия'},{name: 'Почта'},{name: 'Номер'}];
-    const tobdy = [
-        [{name: 'ФИО'}, {name: 'Вакансия'},{name: 'Почта'},{name: 'Номер'}]
+    const thead = [{name: 'ФИО'}, {name: 'Вакансия'}, {name: 'Почта'}, {name: 'Телефон'}];
+    const tbody = [
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность front-end разработчика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность бизнес аналитика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность back-end разработчика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность бухгалтера'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность front-end разработчика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность front-end разработчика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность front-end разработчика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность front-end разработчика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
+        [{name: 'Тестовый тест тестович'}, {name: 'Должность front-end разработчика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],
     ];
 
     return (
@@ -18,28 +27,7 @@ const Applicants = () => {
                 <ButtonComponent text='Удалить'/>
             </div>
 
-            {/*<ul className="responsive-table">*/}
-            {/*    <li className="table-header">*/}
-            {/*        <div className="col col-1">ФИО</div>*/}
-            {/*        <div className="col col-2">Должность по вакансии</div>*/}
-            {/*        <div className="col col-3">Почта</div>*/}
-            {/*        <div className="col col-4">Номер</div>*/}
-            {/*    </li>*/}
-            {/*    <li className="table-row">*/}
-            {/*        <div className="col col-1" data-label="Job Id">Гроховский Игорь</div>*/}
-            {/*        <div className="col col-2" data-label="Customer Name">Петушара</div>*/}
-            {/*        <div className="col col-3" data-label="Amount">аываывываыва</div>*/}
-            {/*        <div className="col col-4" data-label="Payment Status">423432432343</div>*/}
-            {/*    </li>*/}
-
-            {/*    <li className="table-row">*/}
-            {/*        <div className="col col-1" data-label="Job Id">Владимир Литвинов</div>*/}
-            {/*        <div className="col col-2" data-label="Customer Name">Хуесос</div>*/}
-            {/*        <div className="col col-3" data-label="Amount">аываывываыва</div>*/}
-            {/*        <div className="col col-4" data-label="Payment Status">423432432343</div>*/}
-            {/*    </li>*/}
-            {/*</ul>*/}
-
+            <TableListComponent theadElements = {thead} tbodyElements = {tbody}/>
         </div>
     );
 };
