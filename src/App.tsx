@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthorizedPage from "./pages/authorizedPage";
 
-import "./App.css";
+import "./styles/App.css";
 import AuthPage from "./pages/authorisation/auth.page";
 
 const TitlePage = React.lazy(() => import("./sections/titlePage"));

@@ -1,109 +1,69 @@
-import "./departments.css";
-import {TitleComponent} from "../../components/elements/title/title.component";
-import ButtonComponent from "../../components/elements/button/button.component";
 import React, {useState} from "react";
 import Header from "../../components/header/header";
+import "./departments.css";
+import DepartmentComponent from "./department.component";
+
+const departments = [
+    {
+        id: 1,
+        name: 'Отдел менеджмента',
+        empCountNow: 8,
+        empCountMax: 10
+    },
+    {
+        id: 2,
+        name: 'Отдел разработки',
+        empCountNow: 3,
+        empCountMax: 5
+    },
+    {
+        id: 3,
+        name: 'Отдел маркетинга',
+        empCountNow: 10,
+        empCountMax: 10
+    },
+    {
+        id: 4,
+        name: 'Отдел бухгалтерии',
+        empCountNow: 8,
+        empCountMax: 10
+    },
+    {
+        id: 5,
+        name: 'Отдел менеджмента 2',
+        empCountNow: 8,
+        empCountMax: 10
+    },
+    {
+        id: 6,
+        name: 'Отдел менеджмента 3',
+        empCountNow: 8,
+        empCountMax: 10
+    },
+    {
+        id: 7,
+        name: 'Отдел менеджмента 4',
+        empCountNow: 8,
+        empCountMax: 10
+    },
+];
 
 function Departments() {
-
-    const handleMessageBox = () => {
-        console.log(1);
-    }
-
+    const [modal, setModal] = useState(null);
 
     return (
         <>
             <Header/>
 
             <div id="container">
-                <div className="department">
-                    <TitleComponent text="Отдел менеджмента"/>
-                    <div className="info">
-                        <span>Количество менеджеров 8/10</span>
-                        <ButtonComponent text="Сообщение" className="btn" onClick={() => handleMessageBox}/>
-                    </div>
-                </div>
-
-
-                <div className="department">
-                    <TitleComponent text="Отдел маркетинга"/>
-                    <div className="info">
-                        <span>Количество менеджеров 3/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
-
-
-                <div className="department">
-                    <TitleComponent text="Отдел Front"/>
-                    <div className="info">
-                        <span>Количество менеджеров 10/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
-
-                <div className="department">
-                    <TitleComponent text="Отдел менеджмента"/>
-                    <div className="info">
-                        <span>Количество менеджеров 8/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
-
-
-                <div className="department">
-                    <TitleComponent text="Отдел менеджмента"/>
-                    <div className="info">
-                        <span>Количество менеджеров 8/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
-
-
-                <div className="department">
-                    <TitleComponent text="Отдел менеджмента"/>
-                    <div className="info">
-                        <span>Количество менеджеров 8/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
-
-
-                <div className="department">
-                    <TitleComponent text="Отдел менеджмента"/>
-                    <div className="info">
-                        <span>Количество менеджеров 8/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
-
-
-                <div className="department">
-                    <TitleComponent text="Отдел менеджмента"/>
-                    <div className="info">
-                        <span>Количество менеджеров 8/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
-
-
-                <div className="department">
-                    <TitleComponent text="Отдел менеджмента"/>
-                    <div className="info">
-                        <span>Количество менеджеров 8/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
-
-
-                <div className="department">
-                    <TitleComponent text="Отдел менеджмента"/>
-                    <div className="info">
-                        <span>Количество менеджеров 8/10</span>
-                        <ButtonComponent text="Сообщение"/>
-                    </div>
-                </div>
+                {
+                    departments.map((department: any) => {
+                    return <DepartmentComponent key = {department.id} item = {department} setModal = {setModal}/>
+                })
+                }
             </div>
+
+            {modal}
         </>
     );
 }
