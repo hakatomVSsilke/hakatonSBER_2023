@@ -1,8 +1,10 @@
 import React from 'react';
+import "./infoUser.style.css";
+
 
 const InfoUser = () => {
     return (
-        <div>
+        <div className="blockInfo">
             <div id="content">
 
             </div>

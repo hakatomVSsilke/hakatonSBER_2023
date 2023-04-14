@@ -1,5 +1,6 @@
 import React from 'react';
 import "./cardInfoUser.style.css";
+import InfoUser from "./infoUser";
 
 const CardInfoUser = () => {
 

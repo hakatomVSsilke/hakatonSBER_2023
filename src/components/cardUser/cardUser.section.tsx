@@ -6,7 +6,6 @@ const CardUser = () => {
     return (
         <div>
             <CardInfoUser/>
-            <InfoUser/>
         </div>
     );
 };

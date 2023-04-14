@@ -1,0 +1,10 @@
+.blockInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#content {
+    border: 1px solid black;
+    width: 300px;
+}

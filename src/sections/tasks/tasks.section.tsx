@@ -3,6 +3,7 @@ import Header from "../../components/header/header";
 import TaskBlock from "./component/taskBlock";
 import "./tasksStyle.css";
 import CardUser from "../../components/cardUser/cardUser.section";
+import InfoUser from "../../components/cardUser/component/infoUser";
 
 const TasksSection = () => {
     return (
@@ -14,7 +15,6 @@ const TasksSection = () => {
                     <TaskBlock/>
                 </div>
             </div>*/}
-
             <CardUser/>
         </>
     );
