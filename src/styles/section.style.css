@@ -1,0 +1,6 @@
+.section-header {
+    border-bottom: 1px solid #c7c7c7;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}

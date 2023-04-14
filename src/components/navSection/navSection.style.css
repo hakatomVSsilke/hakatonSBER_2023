@@ -1,7 +1,8 @@
 #nav_section-block {
 	height: 100vh;
 	width: max-content;
-	background: linear-gradient(18deg, #fff14d, #6de935);
+	background: white;
+	border-right: 1px solid #c9c9c9;
 	padding: 0 10px;
 	max-width: 110px;
 	position: fixed;
@@ -14,20 +15,12 @@
 	text-align: center;
 }
 
-#nav_section-block #nav_section_buttons-block a[href="/feedback/pipeline_view"] {
-	padding-bottom: 2px;
-}
-
-#nav_section-block #nav_section_buttons-block a.active * {
-	fill: none;
-}
-
 #nav_section-block #nav_section_buttons-block a {
-	border: 1px solid #c5c5c5;
+	border: 1px solid #ebebeb;
 	text-decoration: none;
 	margin: 10px 0;
 	padding: 7px;
-	border-radius: 17px;
+	border-radius: 5px;
 	box-shadow: 0 0 6px 0 #c7c7c7;
 	background-color: #ffffff;
 	position: relative;
@@ -40,29 +33,24 @@
 
 #nav_section-block #nav_section_buttons-block a span {
 	height: 31px;
+	padding: 6px 9px;
 }
 
-#nav_section-block #nav_section_buttons-block a:hover {
+#nav_section-block #nav_section_buttons-block a span.applicants {
+	height: 31px;
+	padding: 6px 9px;
+}
+
+#nav_section-block #nav_section_buttons-block a span.settings {
+	padding-top: 1px;
+}
+
+#nav_section-block #nav_section_buttons-block a:hover *{
 	overflow: visible;
+	stroke: green;
 }
 
 #nav_section-block #nav_section_buttons-block a:active {
 	transform: scale(0.98);
 	box-shadow: none;
-}
-
-#nav_section-block #nav_section_buttons-block a:hover::after {
-	opacity: 1;
-}
-
-#nav_section-block #nav_section_buttons-block a::after {
-	content: attr(data-title);
-	background-color: #a2ec3d;
-	position: absolute;
-	left: 63px;
-	padding: 7px;
-	color: black;
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
-	transition: 0.1s;
 }

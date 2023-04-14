@@ -1,14 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./taskBlockStyle.css";
-import UserCard from "../../../components/elements/userCard/userCard.section";
 
-const TaskBlock = () => {
-
+const TaskBlock = ({item}: any) => {
+    const id = item.id;
+    const text = item.text;
+    const completeDate = item.completeDate;
+    const entityId = item.entityId;
+    const entityType = item.entityType;
 
     return (
-        <>
-            <UserCard/>
-        </>
+        <div className='element-wrapper'>
+            <div>
+
+            </div>
+            <div>
+                {text}
+            </div>
+        </div>
     );
 };
 

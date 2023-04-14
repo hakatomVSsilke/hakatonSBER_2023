@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonComponent from "../../components/elements/button/button.component";
+import ButtonComponent from "../../../components/elements/button/button.component";
 
 const MessageFromDepartmentModal = ({setState}: any) => {
     return (

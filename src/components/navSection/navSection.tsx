@@ -11,32 +11,22 @@ const navSection: React.FunctionComponent = () => {
         <div id = "nav_section-block">
             <div id = "nav_section_buttons-block">
                 <Link data-title = {'Отклики'} to='/feedback/pipeline_view' className = {pathName === '/feedback/pipeline_view' ? 'active' : ''}>
-                    <IconComponent name = "applicants"/>
-
-                    {/*Отклики*/}
+                    <IconComponent name = "applicants" className = "applicants"/>
                 </Link>
                 <Link data-title = {'Задачи'} to='tasks' className = {pathName === '/tasks' ? 'active' : ''}>
-                    <IconComponent name = "tasks" />
-
-                    {/*Задачи*/}
+                    <IconComponent name = "tasks"/>
                 </Link>
                 <Link data-title = {'Отделы'} to='/departments' className = {pathName === '/departments' ? 'active' : ''}>
-                    <IconComponent name = "departments" />
-
-                    {/*Отделы*/}
+                    <IconComponent name = "departments"/>
                 </Link>
                 <Link data-title = {'Соискатели'} to='applicants' className = {pathName === '/applicants' ? 'active' : ''}>
-                    <IconComponent name = "users" />
-
-                    {/*Соискатели*/}
+                    <IconComponent name = "users"/>
                 </Link>
-
-
                 <Link data-title = {'Пользователи'} to='/users' className={pathName === '/users' ? 'active' : ''}>
                     <IconComponent name = "human"/>
-
-
-                    {/*Пользователи*/}
+                </Link>
+                <Link data-title = {'Отклики'} to='/feedback/pipeline_view' className = {pathName === '/feedback/pipeline_view' ? 'active' : ''}>
+                    <IconComponent name = "settings" className = "settings"/>
                 </Link>
             </div>
         </div>

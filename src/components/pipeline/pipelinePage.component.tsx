@@ -4,19 +4,23 @@ import StatusColumnComponent from "./statusColumn.component";
 
 import './pipeline.style.css';
 
-const PipelinePageComponent = ({items, Component}: any) => {
+const PipelinePageComponent = ({statusData, items, Component}: any) => {
     return (
         <div className="pipeline_page-block">
-            {
-                Object.values(items).map((item: any) => {
-                    return <StatusColumnComponent
-                        key = {item.id}
-                        name={item.name}
-                        color = {item.color}
-                        id = {item.id}
-                        Component = {(id: any, item: any, name: any, className: string = '') => Component(id, item, name, className)}/>
-                })
-            }
+            <div className = "pipeline_inner-block">
+                {
+                    Object.values(statusData).map((status: any) => {
+                        return <StatusColumnComponent
+                            key = {status.id}
+                            name={status.name}
+                            color = {status.color}
+                            id = {status.id}
+                            items = {items[status.name] || []}
+                            Component = {(id: any, item: any) => Component(id, item)}
+                        />
+                    })
+                }
+            </div>
         </div>
     );
 }

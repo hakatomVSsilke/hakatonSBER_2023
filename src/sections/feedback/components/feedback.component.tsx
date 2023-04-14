@@ -10,13 +10,14 @@ import {
     clearAll
 } from "../../../slices/feedback/feedbackPipeline.slice";
 
-const FeedbackComponent = ({item, statusName, className = ''}: any) => {
-    const dispatch= useDispatch();
+const FeedbackComponent = ({item}: any) => {
     const itemId = item.id;
     const itemName = item.name;
+    const className = item.className || '';
+    const statusName = item.statusName || '';
+
     const dragStartElement = useSelector((state: any) => state.feedbackPipelineSlice.dragStartElement);
-    const isMoving         = useSelector((state: any) => state.feedbackPipelineSlice.mouseMoving);
-    const block: any  = useRef({});
+    const dispatch= useDispatch();
 
     const dragStartHandler = (e: any) => {
         dispatch(dragStart({item, statusFrom: statusName}))
@@ -89,7 +90,6 @@ const FeedbackComponent = ({item, statusName, className = ''}: any) => {
                 id = {'el_' + itemId}
                 className = {"feedback-block " + className}
                 key={itemId}
-                ref = {block}
             >
                 <div className="top-data">
                     <span>{itemName}</span>

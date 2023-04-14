@@ -1,7 +1,15 @@
 .pipeline_page-block {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+    overflow: auto;
+}
+
+.pipeline_inner-block {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 400px) );
+    grid-column-gap: 30px;
+    margin: 0 auto;
+    justify-content: center;
+    min-width: 1300px;
+    min-height: 93vh;
 }
 
 .pipeline_page-block .status_column-header {

@@ -1,7 +1,9 @@
 import React, {useState} from "react";
-import Header from "../../components/header/header";
-import "./departments.css";
-import DepartmentComponent from "./department.component";
+import "./components/departments.css";
+import DepartmentComponent from "./components/department.component";
+import DepartmentsHeaderComponent from "./components/departmentsHeader.component";
+
+import '../../styles/section.style.css';
 
 const departments = [
     {
@@ -53,7 +55,7 @@ function Departments() {
 
     return (
         <>
-            <Header/>
+            <DepartmentsHeaderComponent/>
 
             <div id="container">
                 {

@@ -1,8 +1,8 @@
 import React from "react";
-import {TitleComponent} from "../../components/elements/title/title.component";
-import ButtonComponent from "../../components/elements/button/button.component";
-import ModalWrapperComponent from "../../components/modalWrapper/modalWrapper.component";
-import MessageFromDepartmentModal from "./messageFromDepartment.modal";
+import {TitleComponent} from "../../../components/elements/title/title.component";
+import ButtonComponent from "../../../components/elements/button/button.component";
+import ModalWrapperComponent from "../../../components/modalWrapper/modalWrapper.component";
+import MessageFromDepartmentModal from "../modals/messageFromDepartment.modal";
 
 const DepartmentComponent = ({item, setModal}: any) => {
     const name = item.name || '';
