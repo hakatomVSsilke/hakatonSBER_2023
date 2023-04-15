@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    background: linear-gradient(45deg, rgb(29, 161, 134),rgb(147, 220, 19));
+    background: linear-gradient(45deg, rgb(29, 161, 134), rgb(147, 220, 19));
     color: whitesmoke;
 }
 
@@ -31,20 +31,21 @@ body {
 }
 
 #information {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-#information span {
-margin: 10px;
+#information {
+    margin: 10px;
+    display: flex;
 }
 
 .blockBtn {
-display: grid;
-margin: -10px 20px;
-justify-content: end;
+    display: grid;
+    margin: -10px 20px;
+    justify-content: end;
 }
 
 .btnSummary {
-width: 100px;
+    width: 100px;
 }
