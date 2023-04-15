@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: 1px solid black;
+    border: 1px solid #bebcbc;
     width: 300px;
     height: 100%;
     border-radius: 10px;
@@ -19,10 +19,18 @@
     width: 100%;
 }
 
+.btnSettings {
+    transition: 0.2s all;
+}
+
 .btnSettings:hover {
     background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
 }
 
 .btnSettings:active {
+    background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
+}
+
+.btnSettings:focus {
     background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
 }
