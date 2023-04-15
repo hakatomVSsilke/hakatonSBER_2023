@@ -4,7 +4,7 @@ import InputTextComponent from "../../components/elements/inputs/InputText.compo
 
 import './resetPassword.style.css';
 
-const ResetPasswordForm = () => {
+const ResetPasswordForm: React.FunctionComponent = () => {
     return (
         <div id = "reset-password-form">
             <p>

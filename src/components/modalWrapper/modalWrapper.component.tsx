@@ -1,10 +1,10 @@
 import React from "react";
 
 import './modalWrapper.style.css';
+import {ModalWrapperInterface} from "../../interfaces/modalWrapper.interface";
 
-const ModalWrapperComponent = ({component, setState}: any) => {
+const ModalWrapperComponent = ({component, setState}: ModalWrapperInterface) => {
     const closeModalWrapperHandler = (e: any) => {
-        console.log(setState)
         if (e.target.id !== 'modal-wrapper-body') {
             return;
         }

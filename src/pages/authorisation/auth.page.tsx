@@ -6,23 +6,26 @@ import ResetPasswordForm from "./resetPassword.form";
 import ModalWrapperComponent from "../../components/modalWrapper/modalWrapper.component";
 
 import '../../styles/authPage.style.css';
-import {useDispatch} from "react-redux";
-import {login, logout, getUserId} from "../../slices/auth.slice";
+import {AuthFormInterface} from "../../interfaces/authForm.interface";
+const AuthPage: React.FunctionComponent = () => {
+    const [resetModal, setResetModal] = useState<JSX.Element | null>(null);
+    const [form, setFormData]         = useState<AuthFormInterface>({email: '', password: ''});
 
-const AuthPage = () => {
-    const dispatch = useDispatch();
-    const [resetModal, setResetModal]: any = useState(null);
-    const [form, setFormData]: any = useState({});
     const setModalHandler = () => {
-          setResetModal(<ModalWrapperComponent setState = {setResetModal} component={<ResetPasswordForm/>}/>);
+        setResetModal(<ModalWrapperComponent setState={setResetModal} component={<ResetPasswordForm/>}/>);
     };
 
-    const setFormDataHandler = (e: any) => {
-        setFormData((prev: any) => {
-            return {...prev, [e.target.name]: e.target.value}
-        });
+    const setFormDataHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const filedName: string | undefined = e.target.name;
+        const value: string | undefined     = e.target.value;
 
-        console.log(form)
+        if (filedName === undefined || value === undefined) {
+            return;
+        }
+
+        setFormData((prev: any) => {
+            return {...prev, [filedName]: value}
+        });
     }
 
     return (
@@ -44,7 +47,7 @@ const AuthPage = () => {
                     </label>
                 </p>
 
-                <ButtonComponent text = "авторизоваться" onClick = {() => dispatch(login(form))}/>
+                <ButtonComponent text = "авторизоваться" onClick = {() => {}}/>
 
                 <div className = "footnote" onClick={setModalHandler}>
                     Вы забыли пароль?

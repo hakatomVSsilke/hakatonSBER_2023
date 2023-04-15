@@ -1,7 +1,6 @@
-import { Provider } from "react-redux";
+import React from "react";
 import PipelinePageComponent from "../../components/pipeline/pipelinePage.component";
 import FeedbackSectionHeader from "../../sections/feedback/components/feedbackSectionHeader";
-import pipelineStore from "../../stores/pipeline.store";
 import FeedbackComponent from "./components/feedback.component";
 
 import '../../styles/section.style.css';
@@ -98,9 +97,7 @@ const FeedBackPipelinePageComponent = () => {
 		<>
 			<FeedbackSectionHeader />
 
-			<Provider store={pipelineStore}>
 				<PipelinePageComponent statusData ={backData} items = {feedbackItems} Component = {(id: any,item: any) => <FeedbackComponent key = {id} item = {item}/>}/>
-			</Provider>
 		</>
 	);
 };

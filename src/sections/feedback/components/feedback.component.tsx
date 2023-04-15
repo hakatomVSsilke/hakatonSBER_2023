@@ -1,14 +1,4 @@
 import React, {useRef} from "react";
-import {useSelector, useDispatch} from "react-redux";
-import {
-    drop,
-    dragEnd,
-    dragStart,
-    dragLeave,
-    dragOver,
-    setElementId,
-    clearAll
-} from "../../../slices/feedback/feedbackPipeline.slice";
 
 const FeedbackComponent = ({item}: any) => {
     const itemId = item.id;
@@ -16,75 +6,10 @@ const FeedbackComponent = ({item}: any) => {
     const className = item.className || '';
     const statusName = item.statusName || '';
 
-    const dragStartElement = useSelector((state: any) => state.feedbackPipelineSlice.dragStartElement);
-    const dispatch= useDispatch();
-
-    const dragStartHandler = (e: any) => {
-        dispatch(dragStart({item, statusFrom: statusName}))
-    }
-
-    const test = (e: any) => {
-
-        let element = e.target.closest('.feedback-block');
-
-
-        if (!element || element.getAttribute('id') == 'el_' + dragStartElement.item.id) {
-            dispatch(clearAll());
-            return;
-        }
-
-        let elementId = element.closest('.element-wrapper').previousSibling.querySelector('.feedback-block ').getAttribute('id');
-
-        element.closest('.element-wrapper').previousSibling.querySelector('.wrapper').classList.add('draggedOver');
-
-        document.querySelectorAll(`.wrapper.draggedOver:not([data-id="${elementId}"])`).forEach(element => {
-
-            element.classList.remove('draggedOver');
-        })
-    }
-
-    const dragOverHandler = (e: any) => {
-        e.preventDefault();
-
-        if (e.target.dataset.id == dragStartElement.item.id) {
-            return;
-        }
-
-        let element = e.nativeEvent.target.closest('.feedback-block');
-
-        if (!element || element.getAttribute('id') == dragStartElement.item.id) {
-            e.target.classList.add('draggedOver');
-
-            return;
-        }
-
-        element.closest('.element-wrapper').previousSibling.querySelector('.wrapper').classList.add('draggedOver');
-    }
-
-    const dropHandler = (e: any) => {
-        console.log(e)
-
-        if (e.target.getAttribute('id') == dragStartElement.item.id) {
-            return;
-        }
-
-        const data = {
-            dropOnElementId: e.target.dataset.id,
-            position: e.target.dataset.position,
-            statusTo: statusName,
-            from: dragStartElement,
-        };
-
-        dispatch(drop(data));
-        dispatch(dragEnd());
-    }
-
     return (
         <div
             className = "element-wrapper"
             draggable={true}
-            onDragStart = {(e:any) => dragStartHandler(e)}
-            onDragEnter = {(e: any) => test(e)}
         >
             <div
                 id = {'el_' + itemId}
@@ -105,9 +30,6 @@ const FeedbackComponent = ({item}: any) => {
 
             <div
                 className={'wrapper'}
-                onDragOver ={(e:any) => dragOverHandler(e)}
-                onDrop = {(e: any) => dropHandler(e)}
-                onDragEnd = {() => dispatch(dragEnd())}
                 data-id = {'el_' + itemId}
                 data-position = "bottom"
             >
