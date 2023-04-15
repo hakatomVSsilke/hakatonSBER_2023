@@ -9,13 +9,16 @@ const DepartmentComponent = ({item, setModal}: any) => {
     const empCountMax = item.empCountMax || 0;
     const empCountNow = item.empCountNow || 0;
     const spanClass = empCountNow < empCountMax ? 'red' : '';
+    const empCountText = ({name});
 
     return (
         <div className="department">
-            <TitleComponent text={name}/>
+            <TitleComponent text={ (
+                <>
+                    {name} <span>Количество менеджеров <span className = {spanClass}>{empCountNow}/{empCountMax}</span></span>
+                </>
+            )}/>
             <div className="info">
-                <span>Количество менеджеров <span className = {spanClass}>{empCountNow}/{empCountMax}</span></span>
-
                 <ButtonComponent text="Сообщение" className="btn" onClick={() => setModal(<ModalWrapperComponent component = {<MessageFromDepartmentModal setState = {setModal} />} setState = {setModal}/>)}/>
             </div>
         </div>

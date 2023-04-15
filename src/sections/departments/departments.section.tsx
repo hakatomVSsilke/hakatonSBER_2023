@@ -57,12 +57,14 @@ function Departments() {
         <>
             <DepartmentsHeaderComponent/>
 
-            <div id="container">
-                {
-                    departments.map((department: any) => {
-                    return <DepartmentComponent key = {department.id} item = {department} setModal = {setModal}/>
-                })
-                }
+            <div className = "content-wrapper">
+                <div id="container">
+                    {
+                        departments.map((department: any) => {
+                            return <DepartmentComponent key = {department.id} item = {department} setModal = {setModal}/>
+                        })
+                    }
+                </div>
             </div>
 
             {modal}

@@ -27,3 +27,12 @@
 .table .table-body .column-value {
     padding: 15px;
 }
+
+.checkBox {
+    margin: 20px auto;
+    visibility: hidden;
+}
+
+.checkBox vision {
+    visibility: visible;
+}

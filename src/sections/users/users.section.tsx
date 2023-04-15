@@ -1,6 +1,7 @@
 import React from 'react';
 import "./usersStyle.css"
 import TableListComponent from "../../components/tableList/tableList.component";
+import ChatBlock from "./component/chatBlock";
 
 
 const Users = () => {
@@ -19,7 +20,7 @@ const Users = () => {
 
     return (
         <>
-            <TableListComponent theadElements = {thead} tbodyElements = {tbody}/>
+           <TableListComponent theadElements = {thead} tbodyElements = {tbody}/>
         </>
     );
 };

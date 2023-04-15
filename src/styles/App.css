@@ -21,3 +21,13 @@ body {
 .red {
   color: red;
 }
+
+.content-wrapper {
+  background: white;
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 #cdc8c8;
+  border: 1px solid #e5e5e5;
+}

@@ -7,7 +7,6 @@ button.simpleButton {
     font-weight: bold;
     transition: 0.2s;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 button.simpleButton:hover {

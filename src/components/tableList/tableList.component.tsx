@@ -8,14 +8,14 @@ import './table.style.css';
 const TableListComponent = ({theadElements = [], tbodyElements = [], tfooterElements = []}: any) => {
     return (
         <table className="table">
-            <TheadComponent key = {'thead'} elements={theadElements}/>
+            <TheadComponent key={'thead'} elements={theadElements}/>
 
-            <tbody className = "table-body">
-                {
-                    tbodyElements.map((elements: any, index: number) => {
-                        return <TbodyComponent key = {index} elements={elements}/>
-                    })
-                }
+            <tbody className="table-body">
+            {
+                tbodyElements.map((elements: any, index: number) => {
+                    return <TbodyComponent key={index} elements={elements}/>
+                })
+            }
             </tbody>
 
             <TfooterComponent elements={tfooterElements}/>

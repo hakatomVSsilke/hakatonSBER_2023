@@ -1,5 +1,6 @@
 import React from 'react';
 import "./taskBlockStyle.css";
+import CardUser from "../../../components/cardUser/cardUser";
 
 const TaskBlock = ({item}: any) => {
     const id = item.id;
@@ -11,7 +12,7 @@ const TaskBlock = ({item}: any) => {
     return (
         <div className='element-wrapper'>
             <div>
-
+                <CardUser/>
             </div>
             <div>
                 {text}

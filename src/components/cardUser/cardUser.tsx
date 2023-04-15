@@ -1,8 +1,8 @@
 import React from 'react';
 import "./cardInfoUser.style.css";
-import InfoUser from "./infoUser";
 
-const CardInfoUser = () => {
+
+const CardUser = () => {
 
     const head = [
         {name: "Тест Фёдорович Генадий", id: 1}
@@ -39,4 +39,4 @@ const CardInfoUser = () => {
     );
 };
 
-export default CardInfoUser;
+export default CardUser;
