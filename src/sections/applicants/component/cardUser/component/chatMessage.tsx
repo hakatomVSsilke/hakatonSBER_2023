@@ -1,7 +1,7 @@
 import React from 'react';
-import ButtonComponent from "../../elements/button/button.component";
+import ButtonComponent from "../../../../../components/elements/button/button.component";
 import "./chatMessage.style.css";
-import {TitleComponent} from "../../elements/title/title.component";
+import {TitleComponent} from "../../../../../components/elements/title/title.component";
 
 const ChatMessage = () => {
     return (

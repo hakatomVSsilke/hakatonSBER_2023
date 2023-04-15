@@ -1,7 +1,7 @@
 import React from "react";
 import {Link, Params, useParams} from "react-router-dom";
 import DepartmentsHeaderComponent from "../../sections/departments/components/departmentsHeader.component";
-import CardUser from "../cardUser/cardUser";
+import CardUserComponent from "../../sections/applicants/component/cardUser/cardUser.component";
 import UserCard from "../elements/userCard/userCard.section";
 
 const TbodyComponent = ({elements}: any) => {

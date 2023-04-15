@@ -23,7 +23,7 @@ const TasksComponent = React.lazy(
 );
 
 const CardUserComponent = React.lazy(
-    () => import("./components/cardUser/cardUser")
+    () => import("./sections/applicants/component/cardUser/cardUser.component")
 );
 
 const SettingsComponent = React.lazy(
