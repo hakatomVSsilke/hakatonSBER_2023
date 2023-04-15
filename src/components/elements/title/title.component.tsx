@@ -11,7 +11,7 @@ interface TitleComponentProps
 
 export const TitleComponent: FunctionComponent<TitleComponentProps> = ({text, level = "3"}: any) => {
     return (
-        <h3 className = "title-component" data-level = {level}>
+        <h3 className = 'title-component' data-level = {level}>
             {text}
         </h3>
     );

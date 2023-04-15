@@ -1,0 +1,62 @@
+#chatBlock {
+    border-radius: 10px;
+    background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
+    height: 100%;
+    width: 95%;
+    box-shadow: 0 0 6px 0 #c7c7c7;
+    margin: 0 auto;
+    color: whitesmoke;
+}
+
+.textBlock {
+    text-align: center;
+    padding: 5px;
+}
+
+#display {
+    width: 95%;
+    height: 85%;
+    background-color: whitesmoke;
+    box-shadow: 0 0 6px 0 #c7c7c7;
+    margin: 0 auto;
+}
+
+#blockButton {
+    display: flex;
+    justify-content: center;
+}
+
+#blockMessage {
+    display: flex;
+    margin: 20px;
+}
+
+#inputText {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #c7c7c7;
+    outline: none;
+    text-decoration: none;
+    transition: 0.2s all;
+    font-size: 16px;
+}
+
+#inputText:hover {
+    box-shadow: 0 0 6px 0 #c7c7c7;
+}
+
+#inputText:active {
+    box-shadow: 0 0 6px 0 #c7c7c7;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 6px 0 #c7c7c7;
+}
