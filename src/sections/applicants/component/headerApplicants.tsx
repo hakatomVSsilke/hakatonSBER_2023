@@ -25,7 +25,7 @@ const HeaderApplicants = () => {
                 <TitleComponent text="Соискатели"/>
                 <div className="filter">Фильтр</div>
 
-                <ButtonComponent text="Массовое действие" onClick={handleClick}/>
+                <ButtonComponent text="Массовое действие" onClick={handleClick} className="visionBtn"/>
             </div>
 
             {modal}
