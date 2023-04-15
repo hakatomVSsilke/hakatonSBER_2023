@@ -4,67 +4,59 @@ import DepartmentComponent from "./components/department.component";
 import DepartmentsHeaderComponent from "./components/departmentsHeader.component";
 
 import '../../styles/section.style.css';
+import {DepartmentItemInterface} from "../../interfaces/departmentItem.interface";
 
-const departments = [
+const departments: DepartmentItemInterface[] = [
     {
         id: 1,
         name: 'Отдел менеджмента',
-        empCountNow: 8,
-        empCountMax: 10
+        depLeadId: 1,
     },
     {
         id: 2,
         name: 'Отдел разработки',
-        empCountNow: 3,
-        empCountMax: 5
+        depLeadId: 1,
     },
     {
         id: 3,
         name: 'Отдел маркетинга',
-        empCountNow: 10,
-        empCountMax: 10
+        depLeadId: 1,
     },
     {
         id: 4,
         name: 'Отдел бухгалтерии',
-        empCountNow: 8,
-        empCountMax: 10
+        depLeadId: 1,
     },
     {
         id: 5,
         name: 'Отдел менеджмента 2',
-        empCountNow: 8,
-        empCountMax: 10
+        depLeadId: 1,
     },
     {
         id: 6,
         name: 'Отдел менеджмента 3',
-        empCountNow: 8,
-        empCountMax: 10
+        depLeadId: 1,
     },
     {
         id: 7,
         name: 'Отдел менеджмента 4',
-        empCountNow: 8,
-        empCountMax: 10
+        depLeadId: 1,
     },
 ];
 
 function Departments() {
-    const [modal, setModal] = useState(null);
+    const [modal, setModal] = useState<JSX.Element | null>(null);
 
     return (
         <>
             <DepartmentsHeaderComponent/>
 
-            <div className = "content-wrapper">
-                <div id="container">
-                    {
-                        departments.map((department: any) => {
-                            return <DepartmentComponent key = {department.id} item = {department} setModal = {setModal}/>
-                        })
-                    }
-                </div>
+            <div id="container">
+                {
+                    departments.map((item) => {
+                        return <DepartmentComponent key = {item.id} item = {item} setModal = {setModal}/>
+                })
+                }
             </div>
 
             {modal}
