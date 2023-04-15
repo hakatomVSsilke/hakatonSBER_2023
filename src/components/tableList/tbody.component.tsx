@@ -1,5 +1,8 @@
 import React from "react";
 import {Link, Params, useParams} from "react-router-dom";
+import DepartmentsHeaderComponent from "../../sections/departments/components/departmentsHeader.component";
+import CardUser from "../cardUser/cardUser";
+import UserCard from "../elements/userCard/userCard.section";
 
 const TbodyComponent = ({elements}: any) => {
     const link: any = useParams();
@@ -15,7 +18,7 @@ const TbodyComponent = ({elements}: any) => {
         }
         btnElement.style.visibility = "hidden";
         let flag: boolean = false;
-        console.log(1);
+
         inputList.forEach((item: HTMLInputElement): void => {
             if (flag) {
                 return;
@@ -33,8 +36,13 @@ const TbodyComponent = ({elements}: any) => {
             <input type="checkbox" className="checkBox" onChange={check}/>
             {
                 elements.map((element: any, index: number) => {
+                    let value: any = element.name;
+
+                    if (element.href) {
+                        value = <Link to={element.href}> {element.name} </Link>
+                    }
                     return <td key={index} className="column-value">
-                        {element.name}
+                        {value}
                     </td>;
                 })
             }
