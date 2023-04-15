@@ -5,6 +5,10 @@ import {PipelinePageComponentInterface} from "../../interfaces/pipelinePageCompo
 
 import './pipeline.style.css';
 import {StatusData} from "../../interfaces/status.interface";
+import {
+    PipelinePageComponentItemTypes,
+    StatusPipelineItemsTypes
+} from "../../interfaces/pipelinePageComponentItemTypes.interface";
 
 const PipelinePageComponent: React.FunctionComponent<PipelinePageComponentInterface> = ({statusData, items, component}) => {
     return (
@@ -12,14 +16,21 @@ const PipelinePageComponent: React.FunctionComponent<PipelinePageComponentInterf
             <div className = "pipeline_inner-block">
                 {
                     Object.values(statusData).map((status: StatusData) => {
-                        // const statusItems: any = items[status.name];
+                        const statusName: string = status.name || '';
+                        let statusItems: PipelinePageComponentItemTypes = [];
+
+                        if (statusName) {
+                            statusItems = items[statusName as keyof StatusPipelineItemsTypes];
+                        }
+
+                        console.log(statusItems)
 
                         return <StatusColumnComponent
                             key = {status.id}
                             name={status.name}
                             color = {status.color}
                             id = {status.id}
-                            // items = {statusItems}
+                            items = {statusItems}
                             component = {(id: any, item: any) => component(id, item)}
                         />
                     })

@@ -14,9 +14,9 @@ const StatusColumnComponent: React.FunctionComponent<StatusColumn> = ({name, col
                 {component('empty', {name: 'empty', statusName: name, className: 'empty'})}
 
                 {
-                    // items.map((item: any) => {
-                    //     return component(item.id, item);
-                    // })
+                    items.map((item: any) => {
+                        return component(item.id, item);
+                    })
                 }
             </div>
         </div>

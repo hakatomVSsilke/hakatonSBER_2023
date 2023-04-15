@@ -9,7 +9,7 @@ export interface StatusColumn
 
     id: number;
 
-    items?: PipelinePageComponentItemTypes;
+    items: PipelinePageComponentItemTypes;
 
     component: React.FunctionComponent;
 }
