@@ -1,8 +1,15 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 
 import './title.style.css';
 
-export const TitleComponent = ({text, level = "3"}: any) => {
+interface TitleComponentProps
+{
+    text: string;
+
+    level?: string;
+}
+
+export const TitleComponent: FunctionComponent<TitleComponentProps> = ({text, level = "3"}: any) => {
     return (
         <h3 className = "title-component" data-level = {level}>
             {text}

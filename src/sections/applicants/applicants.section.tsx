@@ -1,9 +1,6 @@
 import React from 'react';
-import {TitleComponent} from "../../components/elements/title/title.component";
-import ButtonComponent from "../../components/elements/button/button.component";
 import "./applicantsStyle.css";
 import TableListComponent from "../../components/tableList/tableList.component";
-import Header from "../../components/header/header";
 import HeaderApplicants from "./component/headerApplicants";
 
 

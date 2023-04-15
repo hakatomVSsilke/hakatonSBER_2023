@@ -2,7 +2,16 @@ import React from "react";
 
 import './button.style.css';
 
-const ButtonComponent = ({text = '', className = '', onClick = null}: any) => {
+interface ButtonComponentProps
+{
+    text?: string;
+
+    className?: string;
+
+    onClick?: any;
+}
+
+const ButtonComponent: React.FunctionComponent<ButtonComponentProps> = ({text = '', className = '', onClick = null}) => {
     return (
         <button className = {'simpleButton ' + className} onClick={onClick}>
             {text}

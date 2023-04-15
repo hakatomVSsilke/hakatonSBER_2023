@@ -1,11 +1,19 @@
 import "./loader.style.css";
+import React from "react";
 
-const LoaderComponent = ({ id }: any) => {
+interface LoaderComponentProps
+{
+	id?: string;
+
+	className?: string;
+}
+
+const LoaderComponent: React.FunctionComponent<LoaderComponentProps> = ({ id = '', className = ''}) => {
 	return (
 		<div className="pageList">
 			<svg
 				id={id}
-				className="loader"
+				className={"loader " + className}
 				xmlns="http://www.w3.org/2000/svg"
 				xmlnsXlink="http://www.w3.org/1999/xlink"
 				width="191px"
