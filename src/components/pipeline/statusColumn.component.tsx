@@ -1,6 +1,5 @@
-import React, {useEffect} from "react";
+import React     from "react";
 import {TitleComponent} from "../elements/title/title.component";
-import {StatusData} from "../../interfaces/status.interface";
 import {StatusColumn} from "../../interfaces/statusColumn.interface";
 
 const StatusColumnComponent: React.FunctionComponent<StatusColumn> = ({name, color, id, items, component}) => {

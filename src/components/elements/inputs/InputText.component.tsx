@@ -2,7 +2,22 @@ import React from "react";
 
 import './input.style.css';
 
-const InputTextComponent = ({name, value, className, id, onInput, onChange}: any) => {
+interface InputTextComponentProps
+{
+    name?: string;
+
+    value?: string;
+
+    className?: string;
+
+    id?: string;
+
+    onInput?: any;
+
+    onChange?: any;
+}
+
+const InputTextComponent: React.FunctionComponent<InputTextComponentProps> = ({name = '', value = '', className = '', id = '', onInput = null, onChange = null}: any) => {
     return (
         <>
             <input
