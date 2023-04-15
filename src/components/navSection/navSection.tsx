@@ -22,7 +22,7 @@ const navSection: React.FunctionComponent = () => {
                 <Link data-title = {'Соискатели'} to='applicants' className = {pathName === '/applicants' ? 'active' : ''}>
                     <IconComponent name = "users"/>
                 </Link>
-                <Link data-title = {'Настройки'} to='/feedback/pipeline_view' className = {pathName === '/feedback/pipeline_view' ? 'active' : ''}>
+                <Link data-title = {'Настройки'} to='/settings' className = {pathName === '/settings/settings.section' ? 'active' : ''}>
                     <IconComponent name = "settings" className = "settings"/>
                 </Link>
             </div>

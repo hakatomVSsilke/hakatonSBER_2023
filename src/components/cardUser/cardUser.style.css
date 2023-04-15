@@ -3,15 +3,18 @@ body {
 }
 
 .container {
-    height: 100vh;
+    height: 96vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 #head {
-    border-bottom: 8px solid #6de935;
     height: 15%;
     display: flex;
     flex-direction: column;
-    margin: 15px auto;
+    margin: 0 auto;
+    background: linear-gradient(45deg, rgb(29, 161, 134), rgb(147, 220, 19));
+    color: whitesmoke;
 }
 
 #head span {
@@ -20,9 +23,11 @@ body {
 }
 
 #blockInfoUser {
-    border: 1px solid #c9c6c6;
-    width: 40%;
-    height: 100%;
+    min-width: 600px;
+    min-height: 83vh;
+    border-radius: 10px;
+    border: 1px solid #aaafaa;
+    box-shadow: 0 0 6px 0 #c7c7c7;
 }
 
 #information {
@@ -30,6 +35,17 @@ body {
     flex-direction: column;
 }
 
-#information span {
+#information {
     margin: 10px;
+    display: flex;
+}
+
+.blockBtn {
+    display: grid;
+    margin: -10px 20px;
+    justify-content: end;
+}
+
+.btnSummary {
+    width: 100px;
 }
