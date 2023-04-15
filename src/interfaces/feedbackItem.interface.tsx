@@ -1,10 +1,14 @@
 export interface FeedbackItemInterface
 {
-    id: number;
+    item: {
+        id: number;
 
-    name: string;
+        name: string;
 
-    response_date: string;
+        className?: string;
 
-    vacancy: string;
+        vacancy: string;
+
+        response_date: string;
+    };
 }

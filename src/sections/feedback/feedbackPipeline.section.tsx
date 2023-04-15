@@ -100,7 +100,7 @@ const FeedBackPipelinePageComponent = () => {
 		<>
 			<FeedbackSectionHeader />
 
-			<PipelinePageComponent statusData ={backData} items = {feedbackItems} component = {(id: number,item: FeedbackItemInterface) => <FeedbackComponent key = {id} item = {item}/>}/>
+			<PipelinePageComponent statusData ={backData} items = {feedbackItems} component = {(id: number,item: any) => <FeedbackComponent item = {item}/>}/>
 		</>
 	);
 };

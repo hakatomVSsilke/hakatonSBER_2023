@@ -20,10 +20,8 @@ const PipelinePageComponent: React.FunctionComponent<PipelinePageComponentInterf
                         let statusItems: PipelinePageComponentItemTypes = [];
 
                         if (statusName) {
-                            statusItems = items[statusName as keyof StatusPipelineItemsTypes];
+                            statusItems = items[statusName as keyof StatusPipelineItemsTypes] || [];
                         }
-
-                        console.log(statusItems)
 
                         return <StatusColumnComponent
                             key = {status.id}

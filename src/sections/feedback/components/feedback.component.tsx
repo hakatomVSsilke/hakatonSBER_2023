@@ -1,10 +1,13 @@
 import React, {useRef} from "react";
+import {FeedbackItemInterface} from "../../../interfaces/feedbackItem.interface";
 
-const FeedbackComponent = ({item}: any) => {
-    const itemId = item.id;
-    const itemName = item.name;
+const FeedbackComponent: React.FunctionComponent<FeedbackItemInterface> = ({item = {}}) => {
+    console.log(item)
+    const id = item.id;
+    const name = item.name;
+    const vacancy = item.vacancy;
+    const repsonseDate = item.response_date;
     const className = item.className || '';
-    const statusName = item.statusName || '';
 
     return (
         <div
@@ -12,29 +15,28 @@ const FeedbackComponent = ({item}: any) => {
             draggable={true}
         >
             <div
-                id = {'el_' + itemId}
+                id = {'el_' + id}
                 className = {"feedback-block " + className}
-                key={itemId}
+                key={id}
             >
                 <div className="top-data">
-                    <span>{itemName}</span>
+                    <span>{name}</span>
 
-                    <span>{item.response_date}</span>
+                    <span>{repsonseDate}</span>
                 </div>
 
                 <div className = "vacancy">
-                   {item.vacancy}
+                   {vacancy}
                 </div>
             </div>
 
 
             <div
                 className={'wrapper'}
-                data-id = {'el_' + itemId}
+                data-id = {'el_' + id}
                 data-position = "bottom"
             >
             </div>
-
         </div>
     );
 }

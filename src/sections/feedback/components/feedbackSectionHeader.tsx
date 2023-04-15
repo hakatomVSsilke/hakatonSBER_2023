@@ -8,7 +8,7 @@ const FeedbackSectionHeader = () => {
         <div className = "section-header">
             <TitleComponent text = '*По дефолту - все отклики, а так - отклики для отдела*'/>
 
-            <ButtonComponent text = 'Добавить этап' />
+            <ButtonComponent text = 'Фильтр' />
         </div>
     );
 }

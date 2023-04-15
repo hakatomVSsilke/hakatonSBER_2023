@@ -1,6 +1,13 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 
-const icons: any = {
+interface IconComponentProps
+{
+    name: string;
+
+    className?: string;
+}
+
+const icons: {[index: string]: string} = {
     'human': `
         <svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M25 22.7091V29C25 29.5523 24.5523 30 24 30H13.4194H2C1.44772 30 1 29.5523 1 29V22.3704C1 20.7135 2.34314 19.3704 4 19.3704H12.5806H21.6613C23.5052 19.3704 25 20.8652 25 22.7091Z" stroke="#262626" stroke-width="2"/>
@@ -58,7 +65,7 @@ const icons: any = {
     `
 };
 
-const IconComponent = ({name, className = ""}: any) => {
+const IconComponent: FunctionComponent<IconComponentProps> = ({name, className = ""}: any) => {
     return (
         <span className = {className} dangerouslySetInnerHTML={{__html: icons[name] || ''}}>
         </span>
