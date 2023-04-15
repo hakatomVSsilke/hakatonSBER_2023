@@ -14,10 +14,6 @@ const DepartmentsComponent = React.lazy(
     () => import("./sections/departments/departments.section")
 );
 
-const UsersComponent = React.lazy(
-    () => import("./sections/users/users.section")
-);
-
 const ApplicantsComponent = React.lazy(
     () => import("./sections/applicants/applicants.section")
 );
@@ -30,7 +26,7 @@ function App() {
     const [userRouter, setUserRouter] = useState<JSX.Element | null>(null);
 
     useEffect(() => {
-        userRouterHandler(true);
+        userRouterHandler(true );
     }, []);
 
     const userRouterHandler = (isAuthorized: boolean) => {
@@ -59,8 +55,6 @@ function App() {
                 <Route path="departments" element={<DepartmentsComponent />} />
 
                 <Route path="applicants" element={<ApplicantsComponent />} />
-
-                <Route path="users" element={<UsersComponent />} />
             </Route>
         );
     };

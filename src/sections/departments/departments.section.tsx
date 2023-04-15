@@ -53,7 +53,7 @@ function Departments() {
 
             <div id="container">
                 {
-                    departments.map((item) => {
+                    departments.map((item: DepartmentItemInterface) => {
                         return <DepartmentComponent key = {item.id} item = {item} setModal = {setModal}/>
                 })
                 }

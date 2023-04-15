@@ -4,15 +4,17 @@ import FeedbackSectionHeader from "../../sections/feedback/components/feedbackSe
 import FeedbackComponent from "./components/feedback.component";
 
 import '../../styles/section.style.css';
+import {StatusData} from "../../interfaces/status.interface";
+import {StatusPipelineItemsTypes} from "../../interfaces/pipelinePageComponentItemTypes.interface";
 
 const FeedBackPipelinePageComponent = () => {
-	const backData: any = [
+	const backData: StatusData[] = [
 		{ id: 1, name: "status_1" },
 		{ id: 2, name: "status_2" },
 		{ id: 3, name: "status_3" },
 	];
 
-	const feedbackItems: any = {
+	const feedbackItems: StatusPipelineItemsTypes = {
 		'status_1': [
 			{
 				id: 1,
@@ -97,7 +99,7 @@ const FeedBackPipelinePageComponent = () => {
 		<>
 			<FeedbackSectionHeader />
 
-				<PipelinePageComponent statusData ={backData} items = {feedbackItems} Component = {(id: any,item: any) => <FeedbackComponent key = {id} item = {item}/>}/>
+			<PipelinePageComponent statusData ={backData} items = {feedbackItems} component = {(id: number,item: any) => <FeedbackComponent key = {id} item = {item}/>}/>
 		</>
 	);
 };

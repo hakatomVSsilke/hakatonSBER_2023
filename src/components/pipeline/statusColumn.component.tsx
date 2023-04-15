@@ -1,8 +1,9 @@
 import React, {useEffect} from "react";
 import {TitleComponent} from "../elements/title/title.component";
+import {StatusData} from "../../interfaces/status.interface";
+import {StatusColumn} from "../../interfaces/statusColumn.interface";
 
-const StatusColumnComponent = ({name, color, id, items,Component}: any) => {
-    console.log(name)
+const StatusColumnComponent: React.FunctionComponent<StatusColumn> = ({name, color, id, items, component}) => {
     return (
         <div className = "status_column-block" data-id = {id}>
             <div className='status_column-header'>
@@ -10,11 +11,11 @@ const StatusColumnComponent = ({name, color, id, items,Component}: any) => {
             </div>
 
             <div className='status_column-list'>
-                {Component('empty', {name: 'empty', statusName: name, className: 'empty'})}
+                {component('empty', {name: 'empty', statusName: name, className: 'empty'})}
 
                 {
                     items.map((item: any) => {
-                        return Component(item.id, item);
+                        return component(item.id, item);
                     })
                 }
             </div>
