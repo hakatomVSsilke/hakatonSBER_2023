@@ -1,0 +1,10 @@
+#content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.buttonBlock {
+    margin: 0 auto;
+    padding: 10px;
+}

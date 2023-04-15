@@ -3,7 +3,7 @@
     width: 97%;
     border-collapse: separate;
     border-spacing: 0 10px;
-    text-align:center ;
+    text-align: center;
 }
 
 .table .table-head {
@@ -30,9 +30,4 @@
 
 .checkBox {
     margin: 20px auto;
-    visibility: hidden;
-}
-
-.checkBox vision {
-    visibility: visible;
 }
