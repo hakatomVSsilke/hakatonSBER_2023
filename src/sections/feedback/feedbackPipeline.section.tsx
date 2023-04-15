@@ -6,6 +6,7 @@ import FeedbackComponent from "./components/feedback.component";
 import '../../styles/section.style.css';
 import {StatusData} from "../../interfaces/status.interface";
 import {StatusPipelineItemsTypes} from "../../interfaces/pipelinePageComponentItemTypes.interface";
+import {FeedbackItemInterface} from "../../interfaces/feedbackItem.interface";
 
 const FeedBackPipelinePageComponent = () => {
 	const backData: StatusData[] = [
@@ -99,7 +100,7 @@ const FeedBackPipelinePageComponent = () => {
 		<>
 			<FeedbackSectionHeader />
 
-			<PipelinePageComponent statusData ={backData} items = {feedbackItems} component = {(id: number,item: any) => <FeedbackComponent key = {id} item = {item}/>}/>
+			<PipelinePageComponent statusData ={backData} items = {feedbackItems} component = {(id: number,item: FeedbackItemInterface) => <FeedbackComponent key = {id} item = {item}/>}/>
 		</>
 	);
 };
