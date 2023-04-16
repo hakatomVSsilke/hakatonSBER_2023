@@ -13,6 +13,7 @@ import {Provider} from "react-redux";
 import {FeedbackContext} from "../../context/feedbackContext";
 import wrappedRequest from "../../requestWrapper/wrapperRequest";
 import LoaderComponent from "../../components/elements/loader/loader.component";
+import ErrorBoundary from "../../components/errorBoundary/errorBoundary.component";
 
 const FeedBackPipelinePageComponent: React.FunctionComponent = () => {
 	const [statuses, setStatuese] = useState({});
@@ -20,102 +21,24 @@ const FeedBackPipelinePageComponent: React.FunctionComponent = () => {
 	const {drop, dragEnd, dragStart, setData, clearAll} = useDragAndDrop();
 
 	useEffect(() => {
-		const {getData} = wrappedRequest('response/getStatus', 'POST');
-		console.log(getData)
+		const {getData} = wrappedRequest('response/getStatus', 'GET', {}, {'Authorization': 'Bearer ' + localStorage.getItem('token')});
+
 		setPipeline(
 			<PipelinePageComponent getData ={getData} component = {(item: any, id: number) => <FeedbackComponent key = {id} item={item}/>}/>
 		)
 	}, [])
 
-	const feedbackItems: StatusPipelineItemsTypes = {
-		'status_1': [
-			{
-				id: 1,
-				name: 'ФИО 1 статус 1',
-				response_date: '10.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 2,
-				name: 'ФИО 2 статус 1',
-				response_date: '10.11.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 3,
-				name: 'ФИО 3 статус 1',
-				response_date: '09.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 4,
-				name: 'ФИО 4 статус 1',
-				response_date: '06.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-		],
-		'status_2': [
-			{
-				id: 5,
-				name: 'ФИО 5 статус 2',
-				response_date: '10.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 6,
-				name: 'ФИО 6 статус 2',
-				response_date: '10.11.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 7,
-				name: 'ФИО 7 статус 2',
-				response_date: '09.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 8,
-				name: 'ФИО 8 статус 2',
-				response_date: '06.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-		],
-		'status_3': [
-			{
-				id: 9,
-				name: 'ФИО 9 статус 3',
-				response_date: '10.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 10,
-				name: 'ФИО 10 статус 3',
-				response_date: '10.11.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 11,
-				name: 'ФИО 11 статус 3',
-				response_date: '09.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-			{
-				id: 12,
-				name: 'ФИО 12 статус 3',
-				response_date: '06.10.2023',
-				vacancy: 'Должность на android разработчика',
-			},
-		]
-	};
 
 	return (
 		<FeedbackContext.Provider value = {{drop, dragEnd, dragStart, setData, clearAll}}>
 			<FeedbackSectionHeader />
 
 
-			<Suspense fallback={<LoaderComponent />}>
-				{pipelinePage}
-			</Suspense>
+				<ErrorBoundary errorTitle = "Ошибка!" errorTexxt = "Возникла ошибка при запросе откликов">
+					<Suspense fallback={<LoaderComponent />}>
+						{pipelinePage}
+					</Suspense>
+				</ErrorBoundary>
 		</FeedbackContext.Provider>
 	);
 };

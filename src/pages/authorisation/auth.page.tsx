@@ -7,10 +7,12 @@ import ModalWrapperComponent from "../../components/modalWrapper/modalWrapper.co
 
 import '../../styles/authPage.style.css';
 import {AuthFormInterface} from "../../interfaces/authForm.interface";
+import {useHttp} from "../../hooks/useHTTP";
 
 const AuthPage: React.FunctionComponent = () => {
+    const {request} = useHttp();
     const [resetModal, setResetModal] = useState<JSX.Element | null>(null);
-    const [form, setFormData] = useState<AuthFormInterface>({email: '', password: ''});
+    const [form, setFormData] = useState<AuthFormInterface>({username: '', password: ''});
 
     const setModalHandler = () => {
         setResetModal(<ModalWrapperComponent setState={setResetModal} component={<ResetPasswordForm/>}/>);
@@ -29,6 +31,18 @@ const AuthPage: React.FunctionComponent = () => {
         });
     }
 
+    const loginHandler = async () => {
+        let response = await request('/auth/register', 'POST', {}, {'Content-Type': 'application/json'}, form);
+
+        if (response.message === 'Okay' || response.statusCode == 405) {
+            response = await request('/auth/login', 'POST', {}, {'Content-Type': 'application/json'}, form);
+
+            localStorage.setItem('token', response.token);
+
+            window.location.pathname = '/';
+        }
+    }
+
     return (
         <div id="auth-container-body">
             <div id="auth-container">
@@ -37,19 +51,18 @@ const AuthPage: React.FunctionComponent = () => {
                 <form>
                     <label>
                         Почта:
-                        <InputTextComponent onInput={(e: any) => setFormDataHandler(e)} name="email" id="email"
+                        <InputTextComponent onInput={(e: any) => setFormDataHandler(e)} value={form.username} name="username" id="email"
                                             className="full center"/>
                     </label>
 
                     <label>
                         Пароль:
-                        <InputTextComponent onInput={(e: any) => setFormDataHandler(e)} name="password"
+                        <InputTextComponent onInput={(e: any) => setFormDataHandler(e)} value={form.password} name="password"
                                             id="password" className="full center"/>
                     </label>
                 </form>
 
-                <ButtonComponent text="авторизоваться" className="buttonAut" onClick={() => {
-                }}/>
+                <ButtonComponent text="авторизоваться" className="buttonAut" onClick={loginHandler}/>
 
                 <div className="footnote" onClick={setModalHandler}>
                     Вы забыли пароль?

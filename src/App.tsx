@@ -44,7 +44,6 @@ const MessagesTemplatesComponent = React.lazy(
 );
 
 function App() {
-    const {request} = useHttp();
     const [userRouter, setUserRouter] = useState<JSX.Element | null>(null);
     const {drop, dragEnd, dragStart, setData, clearAll} = useDragAndDrop();
 
@@ -53,51 +52,44 @@ function App() {
     }, []);
 
     const userRouterHandler = async () => {
-            let isAuthorized: boolean = true;
-            let response     = await request('/auth/login', "POST", {}, {}, {});
+        if (!localStorage.getItem('token')) {
+                setUserRouter(
+                    <Route path='/*' element={<AuthPage/>}/>
+                );
 
-            if (response.status == 401 || response.token === 'ERROR') {
-                isAuthorized = false;
+                return;
             }
 
-        if (!isAuthorized) {
-            setUserRouter(
-                <Route path='/*' element={<AuthPage/>}/>
-            );
+        setUserRouter(
+            <Route path="/" element={<AuthorizedPage/>}>
+                <Route index element={<TitlePage/>}/>
 
-            return;
-        }
+                    <Route path="feedback">
+                        <Route
+                            index
+                            path="pipeline_view"
+                            element={<FeedBackPipelinePageComponent/>}
+                        />
+                        <Route path="list_view" element={<FeedBackPipelinePageComponent/>}/>
+                    </Route>
 
-        // setUserRouter(
-        //     <Route path="/" element={<AuthorizedPage/>}>
-        //         <Route index element={<TitlePage/>}/>
-        //
-        //             <Route path="feedback">
-        //                 <Route
-        //                     index
-        //                     path="pipeline_view"
-        //                     element={<FeedBackPipelinePageComponent/>}
-        //                 />
-        //                 <Route path="list_view" element={<FeedBackPipelinePageComponent/>}/>
-        //             </Route>
-        //
-        //         <Route path="tasks" element={<TasksComponent/>}/>
-        //
-        //         <Route path="departments" element={<DepartmentsComponent/>}>
-        //             <Route path={'chat/:id'} element={<DepartmentChatComponent/>}/>
-        //         </Route>
-        //
-        //         <Route path="applicants">
-        //             <Route index element={<ApplicantsComponent/>}/>
-        //             <Route path=":id" element={<CardUserComponent/>}/>
-        //         </Route>
-        //
-        //         <Route path="settings" element={<SettingsComponent/>}>
-        //             <Route path="telegramSettings" element={<TelegramSettingsComponent/>}/>
-        //             <Route path="messagesTemplates" element={<MessagesTemplatesComponent/>}/>
-        //         </Route>
-        //     </Route>
-        // );
+                <Route path="tasks" element={<TasksComponent/>}/>
+
+                <Route path="departments" element={<DepartmentsComponent/>}>
+                    <Route path={'chat/:id'} element={<DepartmentChatComponent/>}/>
+                </Route>
+
+                <Route path="applicants">
+                    <Route index element={<ApplicantsComponent/>}/>
+                    <Route path=":id" element={<CardUserComponent/>}/>
+                </Route>
+
+                <Route path="settings" element={<SettingsComponent/>}>
+                    <Route path="telegramSettings" element={<TelegramSettingsComponent/>}/>
+                    <Route path="messagesTemplates" element={<MessagesTemplatesComponent/>}/>
+                </Route>
+            </Route>
+        );
     };
 
     return (

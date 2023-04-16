@@ -88,10 +88,12 @@ const request = async (action: any, method: any, params:any, headers:any, body:a
     }
 
     if (method === 'POST') {
-        headers['Content-Type'] = 'application/json;charset=utf-8';
+        headers['Content-Type'] = 'application/json;';
     } else if (method === 'IMAGE') {
         method = 'POST';
     }
+
+    console.log(headers)
 
     return fetch(uri, {
         method  : method,

@@ -1,6 +1,6 @@
 export interface AuthFormInterface
 {
-    email: string;
+    username: string;
 
     password: string;
 }
