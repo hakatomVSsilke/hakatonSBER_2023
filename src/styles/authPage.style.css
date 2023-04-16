@@ -4,17 +4,19 @@
     align-content: center;
     justify-content: center;
     text-align: center;
+    background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
 }
  
 #auth-container {
     border: 1px solid #c5c5c5;
-    box-shadow: 0 0 3px 0 #d5d5d5;
+    box-shadow: 0 0 3px 0 rgb(29, 161, 134);
     border-radius: 4px;
     width: 300px;
     position: relative;
     padding-top: 10px;
     overflow: hidden;
     padding-bottom: 12px;
+    background-color: whitesmoke;
 }
 
 #auth-container::after {
@@ -24,7 +26,21 @@
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     position: absolute;
-    background-color: #08a552;
+    background-color: yellow;
     bottom: 0;
     left: 0;
+}
+
+button.buttonAut {
+    padding: 10px 20px;
+    background: #aaafaa;
+    transition: 0s;
+}
+
+button.buttonAut:hover {
+    background: linear-gradient(45deg, rgb(29, 161, 134), rgb(147, 220, 19));
+}
+
+button.buttonAut:active {
+    transform: scale(0.99);
 }
