@@ -8,10 +8,9 @@ const DepartmentComponent: React.FunctionComponent<DepartmentComponentInterface>
 
     return (
         <div className="department">
-            <TitleComponent text={name}/>
-
-            <Link to={'chat/' + item.id}>
-                 <div className="info"></div>
+            <Link to={'chat/' + item.id} className="title-component">
+                <TitleComponent text={name}/>
+                <div className="info"></div>
             </Link>
         </div>
     );
