@@ -46,6 +46,7 @@ const MessagesTemplatesComponent = React.lazy(
 function App() {
     const {request} = useHttp();
     const [userRouter, setUserRouter] = useState<JSX.Element | null>(null);
+    const {drop, dragEnd, dragStart, setData, clearAll} = useDragAndDrop();
 
     useEffect(() => {
         userRouterHandler();

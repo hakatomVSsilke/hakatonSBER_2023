@@ -1,13 +1,18 @@
 input.form-control {
-    border: 1px solid #9f9f9f;
     border-radius: 4px;
-    padding: 5px 6px;
+    padding: 10px;
+    width: 200px;
     transition: 0.1s;
+    outline: none;
+    border-bottom: 1px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: #f7f6f6;
 }
 
-input.form-control:focus {
-    border: 1px solid #08a552;
-    box-shadow: 0 0 1px #08a552;
+input.form-control:active, input.form-control:focus {
+    box-shadow: 0 0 6px 0 gray;
 }
 
 input.form-control.full {
@@ -15,5 +20,5 @@ input.form-control.full {
 }
 
 input.form-control.center {
-    margin: 0 auto;
+    margin: 8px auto;
 }

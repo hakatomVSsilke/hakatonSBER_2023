@@ -53,17 +53,15 @@ function Departments() {
             <DepartmentsHeaderComponent/>
 
             <div id="container">
-                <div id = "department-list">
+                <div id="department-list">
                     {
                         departments.map((item: DepartmentItemInterface) => {
-                            return <DepartmentComponent key = {item.id} item = {item} setModal = {setModal}/>
+                            return <DepartmentComponent key={item.id} item={item} setModal={setModal}/>
                         })
                     }
                 </div>
 
-                <div id = "chatBlock">
-                    <Outlet />
-                </div>
+                <Outlet/>
             </div>
             {modal}
         </>
