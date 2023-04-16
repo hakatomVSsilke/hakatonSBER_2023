@@ -30,6 +30,10 @@ const TbodyComponent = ({elements}: any) => {
         }
     }
 
+    const handleClick = () => {
+        const bodyBlock: HTMLDivElement | null = document.querySelector(".table-body");
+    }
+
     return (
         <tr className="table-body">
             <input type="checkbox" className="checkBox" onChange={check}/>
