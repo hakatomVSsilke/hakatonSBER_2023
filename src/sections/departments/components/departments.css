@@ -18,6 +18,11 @@
     margin-top: 15px;
     justify-content: center;
     max-width: 400px;
+    transition: 0.2s all;
+}
+
+.department:active {
+    transform: scale(0.99);
 }
 
 .info {
@@ -50,6 +55,11 @@ h3 {
     text-align: center;
 }
 
+.title-component {
+    user-select: none;
+    text-decoration: none;
+    color: black;
+}
 
 .messageBox {
 
