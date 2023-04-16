@@ -42,12 +42,12 @@ const AuthPage: React.FunctionComponent = () => {
 
                 <p>
                     <label>
-                        Ваш пароль
+                        Ваш пароль:
                         <InputTextComponent onInput = {(e: any) => setFormDataHandler(e)} name = "password" id = "password" className = "full center"/>
                     </label>
                 </p>
 
-                <ButtonComponent text = "авторизоваться" onClick = {() => {}}/>
+                <ButtonComponent text = "авторизоваться" className="buttonAut" onClick = {() => {}}/>
 
                 <div className = "footnote" onClick={setModalHandler}>
                     Вы забыли пароль?
