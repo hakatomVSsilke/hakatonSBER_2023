@@ -44,7 +44,7 @@ const MessagesTemplatesComponent = React.lazy(
 );
 
 function App() {
-    const {request} = useHttp<any>();
+    const {request} = useHttp();
     const [userRouter, setUserRouter] = useState<JSX.Element | null>(null);
 
     useEffect(() => {
@@ -52,11 +52,12 @@ function App() {
     }, []);
 
     const userRouterHandler = async () => {
-        let response = await request('/auth/login');
+            let isAuthorized: boolean = true;
+            let response     = await request('/auth/login', "POST", {}, {}, {});
 
-        if (response.status == 401) {
-            response = await request('/auth/register', 'POST', );
-        }
+            if (response.status == 401 || response.token === 'ERROR') {
+                isAuthorized = false;
+            }
 
         if (!isAuthorized) {
             setUserRouter(
@@ -66,36 +67,36 @@ function App() {
             return;
         }
 
-        setUserRouter(
-            <Route path="/" element={<AuthorizedPage/>}>
-                <Route index element={<TitlePage/>}/>
-
-                    <Route path="feedback">
-                        <Route
-                            index
-                            path="pipeline_view"
-                            element={<FeedBackPipelinePageComponent/>}
-                        />
-                        <Route path="list_view" element={<FeedBackPipelinePageComponent/>}/>
-                    </Route>
-
-                <Route path="tasks" element={<TasksComponent/>}/>
-
-                <Route path="departments" element={<DepartmentsComponent/>}>
-                    <Route path={'chat/:id'} element={<DepartmentChatComponent/>}/>
-                </Route>
-
-                <Route path="applicants">
-                    <Route index element={<ApplicantsComponent/>}/>
-                    <Route path=":id" element={<CardUserComponent/>}/>
-                </Route>
-
-                <Route path="settings" element={<SettingsComponent/>}>
-                    <Route path="telegramSettings" element={<TelegramSettingsComponent/>}/>
-                    <Route path="messagesTemplates" element={<MessagesTemplatesComponent/>}/>
-                </Route>
-            </Route>
-        );
+        // setUserRouter(
+        //     <Route path="/" element={<AuthorizedPage/>}>
+        //         <Route index element={<TitlePage/>}/>
+        //
+        //             <Route path="feedback">
+        //                 <Route
+        //                     index
+        //                     path="pipeline_view"
+        //                     element={<FeedBackPipelinePageComponent/>}
+        //                 />
+        //                 <Route path="list_view" element={<FeedBackPipelinePageComponent/>}/>
+        //             </Route>
+        //
+        //         <Route path="tasks" element={<TasksComponent/>}/>
+        //
+        //         <Route path="departments" element={<DepartmentsComponent/>}>
+        //             <Route path={'chat/:id'} element={<DepartmentChatComponent/>}/>
+        //         </Route>
+        //
+        //         <Route path="applicants">
+        //             <Route index element={<ApplicantsComponent/>}/>
+        //             <Route path=":id" element={<CardUserComponent/>}/>
+        //         </Route>
+        //
+        //         <Route path="settings" element={<SettingsComponent/>}>
+        //             <Route path="telegramSettings" element={<TelegramSettingsComponent/>}/>
+        //             <Route path="messagesTemplates" element={<MessagesTemplatesComponent/>}/>
+        //         </Route>
+        //     </Route>
+        // );
     };
 
     return (

@@ -10,7 +10,7 @@ const MessagesTemplates: React.FunctionComponent = () => {
     const saveHandler: Function = async () => {
 
 
-        const response = await request('');
+        // const response = await request('');
     }
 
     return (
