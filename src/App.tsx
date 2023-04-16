@@ -8,6 +8,7 @@ import DepartmentChatComponent from "./sections/departments/components/departmen
 import {Provider} from "react-redux";
 import {FeedbackContext} from "./context/feedbackContext";
 import {useDragAndDrop} from "./hooks/useDragAndDrop";
+import {useHttp} from "./hooks/useHTTP";
 
 const TitlePage = React.lazy(() => import("./sections/titlePage"));
 
@@ -43,13 +44,20 @@ const MessagesTemplatesComponent = React.lazy(
 );
 
 function App() {
+    const {request} = useHttp<any>();
     const [userRouter, setUserRouter] = useState<JSX.Element | null>(null);
 
     useEffect(() => {
-        userRouterHandler(true);
-    }, [])
+        userRouterHandler();
+    }, []);
 
-    const userRouterHandler = (isAuthorized: boolean) => {
+    const userRouterHandler = async () => {
+        let response = await request('/auth/login');
+
+        if (response.status == 401) {
+            response = await request('/auth/register', 'POST', );
+        }
+
         if (!isAuthorized) {
             setUserRouter(
                 <Route path='/*' element={<AuthPage/>}/>
