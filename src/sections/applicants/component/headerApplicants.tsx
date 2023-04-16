@@ -5,7 +5,7 @@ import "./headerApplicants.style.css";
 import ModalWrapperComponent from "../../../components/modalWrapper/modalWrapper.component";
 import Action from "./action";
 
-const HeaderApplicants = () => {
+const HeaderApplicants : React.FunctionComponent = () => {
 
     const [modal, setModal] = useState<JSX.Element | null>(null);
     const handleClick = () => {
