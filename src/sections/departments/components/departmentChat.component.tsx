@@ -6,11 +6,11 @@ import '../../../sections/applicants/component/cardUser/component/chatMessage.st
 import {useParams} from "react-router-dom";
 
 const DepartmentChatBlockComponent: React.FunctionComponent = () => {
-    const params = useParams<{id: string}>();
+    const params = useParams<{ id: string }>();
     const departmentId: string | undefined = params.id;
 
     return (
-        <div id="chatBlock" style={{height: '80vh'}}>
+        <div id="chatBlock">
             <div className="textBlock">
                 <TitleComponent text="Сообщение"/>
             </div>
