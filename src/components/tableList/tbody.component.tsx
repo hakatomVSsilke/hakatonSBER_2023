@@ -29,7 +29,7 @@ const TbodyComponent = ({elements}: any) => {
             btnElement.style.visibility = "visible";
         }
     }
-    
+
     return (
         <tr className="table-body">
             <input type="checkbox" className="checkBox" onChange={check}/>
