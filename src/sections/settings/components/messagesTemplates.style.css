@@ -1,0 +1,62 @@
+.templateBlock {
+    display: flex;
+    border: 1px solid #bebcbc;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 #c7c7c7;
+    background: linear-gradient(92deg, rgb(29, 161, 134), rgb(147, 220, 19));
+    margin: 0 auto;
+    min-width: 800px;
+}
+
+.content {
+    border: 1px solid rgb(147, 220, 19);
+    border-radius: 5px;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 95%;
+    margin: 15px auto;
+    padding: 5px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 500px;
+}
+
+.checkBoxStatus {
+    width: 20px;
+    margin: 0;
+}
+
+.text {
+    margin-left: 10px;
+    padding: 5px;
+    color: gray;
+    margin-top: 20px;
+}
+
+.parameterSetting {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.textArea {
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    height: 15px;
+    margin: 15px auto;
+    max-height: 40px;
+    max-width: 300px;
+}
+
+.message {
+    display: grid;
+    justify-content: start;
+}
+
+.buttonBlock {
+    display: grid;
+}

@@ -1,0 +1,40 @@
+.blockSettings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #bebcbc;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 #c7c7c7;
+    height: 96vh;
+}
+
+.buttonBlockSettings {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+
+button.btnSettings {
+    background: #a5a5a5;
+    width: 96%;
+    transition: 0s;
+}
+
+button.bg-blue:hover {
+    background: linear-gradient(90deg, #5f97c0, #9ccade);
+}
+
+.bg-blue:focus {
+    background: linear-gradient(90deg, #5f97c0, #9ccade);
+}
+
+.bg-green:hover {
+    background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
+}
+
+.bg-green:focus {
+    background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
+}
+

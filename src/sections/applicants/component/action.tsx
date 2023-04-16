@@ -3,7 +3,7 @@ import {TitleComponent} from "../../../components/elements/title/title.component
 import ButtonComponent from "../../../components/elements/button/button.component";
 import "./action.style.css";
 
-const Action = () => {
+const Action : React.FunctionComponent = () => {
     return (
         <div id="content">
             <TitleComponent text="Применить действие"/>

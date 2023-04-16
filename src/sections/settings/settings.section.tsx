@@ -1,17 +1,13 @@
 import React from 'react';
-import ButtonComponent from "../../components/elements/button/button.component";
+import SettingsNav from "./components/settingsNav";
 import "./settings.style.css";
+import {Outlet} from "react-router-dom";
 
-const Settings = () => {
+const Settings: React.FunctionComponent = () => {
     return (
         <div className="container">
-            <div className="blockSettings">
-                <div className="buttonBlockSettings">
-                    <ButtonComponent text="TEST" className="btnSettings"/>
-                    <ButtonComponent text="TEST2" className="btnSettings"/>
-                    <ButtonComponent text="TEST3" className="btnSettings"/>
-                </div>
-            </div>
+            <SettingsNav/>
+            <Outlet/>
         </div>
     );
 };

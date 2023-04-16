@@ -4,7 +4,7 @@ import TableListComponent from "../../components/tableList/tableList.component";
 import HeaderApplicants from "./component/headerApplicants";
 
 
-const Applicants = () => {
+const Applicants : React.FunctionComponent = () => {
     const thead = [{name: ""}, {name: 'ФИО'}, {name: 'Вакансия'}, {name: 'Почта'}, {name: 'Телефон'}];
     const tbody = [
         [{name: 'Тестовый тест тестович', href: "1"}, {name: 'Должность front-end разработчика'}, {name: 'test@test.ru'}, {name: '+7-999-666-99-66'}],

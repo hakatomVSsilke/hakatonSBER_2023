@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 import AuthorizedPage from "./pages/authorizedPage";
 import AuthPage from "./pages/authorisation/auth.page";
 
@@ -28,6 +28,14 @@ const CardUserComponent = React.lazy(
 
 const SettingsComponent = React.lazy(
     () => import("./sections/settings/settings.section")
+);
+
+const TelegramSettingsComponent = React.lazy(
+    () => import("./sections/settings/components/telegramSettings")
+);
+
+const MessagesTemplatesComponent = React.lazy(
+    () => import("./sections/settings/components/messagesTemplates")
 );
 
 function App() {
@@ -67,7 +75,10 @@ function App() {
                     <Route path=":id" element={<CardUserComponent/>}/>
                 </Route>
 
-                <Route path="settings" element={<SettingsComponent/>}/>
+                <Route path="settings" element={<SettingsComponent/>}>
+                    <Route path="telegramSettings" element={<TelegramSettingsComponent/>}/>
+                    <Route path="messagesTemplates" element={<MessagesTemplatesComponent/>}/>
+                </Route>
             </Route>
         );
     };
