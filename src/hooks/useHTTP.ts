@@ -15,7 +15,6 @@ function badResponse(errorText: string): {data: string, error: boolean} {
 
 interface useHttpProps
 {
-    request: {
         action: string;
 
         method ?: string;
@@ -25,7 +24,6 @@ interface useHttpProps
         headers?: object;
 
         body?: object;
-    }
 }
 
 /**
@@ -34,7 +32,7 @@ interface useHttpProps
  * @returns {{request:(function(*, *=, *=, *=, *=):string)}}
  */
 export const useHttp = () => {
-    const request = useCallback(async (action: any, method = "", params: any = {}, headers: any={}, body: any = null): Promise<any> => {
+    const request = useCallback(async (action: any, method = "GET", params: any = {}, headers: any = {}, body: any): Promise<any> => {
         let uriParams: string = '';
 
         if (Object.keys(params).length) {
@@ -43,9 +41,9 @@ export const useHttp = () => {
             })
         }
 
-        let uri: string = `https://server-cahef34500.pagekite.me/?action=${action}${uriParams}`;
+        let uri: string = `https://hackathonsber.pagekite.me${action}${uriParams}`;
 
-        let request: any = {};
+        let request: Response;
 
         if (typeof body !== 'string' && body !== null && method !== 'IMAGE') {
             body = JSON.stringify(body);
@@ -73,15 +71,15 @@ export const useHttp = () => {
             throw new Error('Плохой запрос ' + request);
         }
 
-        let data: any    = {};
+        let data: Promise<any>;
 
         try {
-            data = await request.text();
+            data = await request.json();
         } catch (error) {
             throw new Error('Ошибка парсинга данных ' + error);
         }
 
-        return JSON.parse(data);
+        return data;
     }, [])
 
     return {request};

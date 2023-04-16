@@ -8,6 +8,7 @@ import DepartmentChatComponent from "./sections/departments/components/departmen
 import {Provider} from "react-redux";
 import {FeedbackContext} from "./context/feedbackContext";
 import {useDragAndDrop} from "./hooks/useDragAndDrop";
+import {useHttp} from "./hooks/useHTTP";
 
 const TitlePage = React.lazy(() => import("./sections/titlePage"));
 
@@ -43,21 +44,29 @@ const MessagesTemplatesComponent = React.lazy(
 );
 
 function App() {
+    const {request} = useHttp();
     const [userRouter, setUserRouter] = useState<JSX.Element | null>(null);
     const {drop, dragEnd, dragStart, setData, clearAll} = useDragAndDrop();
 
     useEffect(() => {
-        userRouterHandler(true);
-    }, [])
+        userRouterHandler();
+    }, []);
 
-    const userRouterHandler = (isAuthorized: boolean) => {
-        if (!isAuthorized) {
-            setUserRouter(
-                <Route path='/*' element={<AuthPage/>}/>
-            );
+    const userRouterHandler = async () => {
+        let isAuthorized: boolean = true;
+        let response = await request('/auth/login', "POST", {}, {}, {});
 
-            return;
+        if (response.status === 401 || response.token === 'ERROR') {
+            isAuthorized = false;
         }
+
+        // if (!isAuthorized) {
+        //     setUserRouter(
+        //         <Route path='/*' element={<AuthPage/>}/>
+        //     );
+        //
+        //     return;
+        // }
 
         setUserRouter(
             <Route path="/" element={<AuthorizedPage/>}>

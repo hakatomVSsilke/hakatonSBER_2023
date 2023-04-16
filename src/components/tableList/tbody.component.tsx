@@ -5,7 +5,7 @@ import CardUserComponent from "../../sections/applicants/component/cardUser/card
 import UserCard from "../elements/userCard/userCard.section";
 
 const TbodyComponent = ({elements}: any) => {
-    const params = useParams<{id: string}>();
+    const params = useParams<{ id: string }>();
     const linkId: string | undefined = params.id;
 
     const check = () => {
@@ -29,16 +29,12 @@ const TbodyComponent = ({elements}: any) => {
             btnElement.style.visibility = "visible";
         }
     }
-
-    const handleClick = () => {
-        const bodyBlock: HTMLDivElement | null = document.querySelector(".table-body");
-    }
-
+    
     return (
         <tr className="table-body">
             <input type="checkbox" className="checkBox" onChange={check}/>
             {
-                elements.map((element: {href?: string, name: string}, index: number) => {
+                elements.map((element: { href?: string, name: string }, index: number) => {
                     let value: any = element.name;
 
                     if (element.href) {
