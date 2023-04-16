@@ -5,7 +5,7 @@ const FeedbackComponent: React.FunctionComponent<FeedbackItemInterface> = ({item
     const id = item.id;
     const name = item.name;
     const vacancy = item.vacancy;
-    const responseDate = item.response_date;
+    const responseDate = item.date;
     const className = item.className || '';
 
     return (

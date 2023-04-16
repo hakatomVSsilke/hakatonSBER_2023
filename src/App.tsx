@@ -9,6 +9,7 @@ import {Provider} from "react-redux";
 import {FeedbackContext} from "./context/feedbackContext";
 import {useDragAndDrop} from "./hooks/useDragAndDrop";
 import {useHttp} from "./hooks/useHTTP";
+import CreateTestComponent from "./sections/settings/components/createTest.component";
 
 const TitlePage = React.lazy(() => import("./sections/titlePage"));
 
@@ -87,6 +88,7 @@ function App() {
                 <Route path="settings" element={<SettingsComponent/>}>
                     <Route path="telegramSettings" element={<TelegramSettingsComponent/>}/>
                     <Route path="messagesTemplates" element={<MessagesTemplatesComponent/>}/>
+                    <Route path="testing" element={<CreateTestComponent/>}/>
                 </Route>
             </Route>
         );

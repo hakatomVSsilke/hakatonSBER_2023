@@ -14,6 +14,9 @@ const SettingsNav : React.FunctionComponent = () => {
                     <Link to={"messagesTemplates"}>
                         <ButtonComponent text="Шаблонизатор сообщения" className="btnSettings bg-green"/>
                     </Link>
+                    <Link to={"testing"}>
+                        <ButtonComponent text="Тесты" className="btnSettings bg-green"/>
+                    </Link>
                 </div>
             </div>
         </div>

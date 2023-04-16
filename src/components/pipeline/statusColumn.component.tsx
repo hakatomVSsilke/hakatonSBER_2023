@@ -16,7 +16,7 @@ const StatusColumnComponent: React.FunctionComponent<StatusColumn> = ({name, col
                 {component({name: 'empty', statusName: name, className: 'empty'}, 'empty')}
 
                 {
-                    items.map((item: FeedbackItemInterface, id: number) => {
+                    items.map((item: any, id: number) => {
                         return component(item, id);
                     })
                 }

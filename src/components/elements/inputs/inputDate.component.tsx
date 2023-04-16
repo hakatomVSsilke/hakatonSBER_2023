@@ -17,6 +17,7 @@ const InputDateComponent: React.FunctionComponent<InputDateComponentProps> = ({n
     return (
         <>
             <input
+                type = "date"
                 name = {name}
                 value = {value}
                 className={'form-control date ' + className}
