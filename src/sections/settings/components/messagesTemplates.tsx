@@ -2,15 +2,21 @@ import React, {useState} from 'react';
 import "./messagesTemplates.style.css";
 import ButtonComponent from "../../../components/elements/button/button.component";
 import {useHttp} from "../../../hooks/useHTTP";
+import ModalWrapperComponent from "../../../components/modalWrapper/modalWrapper.component";
+import CreateTestComponent from "./createTest.component";
 
 const MessagesTemplates: React.FunctionComponent = () => {
     const {request} = useHttp();
     const [isLoading, setLoading] = useState<boolean>(false);
+    const [filterModal, setFilterModal] = useState<React.ReactElement | null>(null);
 
-    const saveHandler: Function = async () => {
-
-
-        // const response = await request('');
+    const setModalHandler = (): void => {
+        setFilterModal(<ModalWrapperComponent component={
+            <>
+                <CreateTestComponent/>
+                <ButtonComponent text = "сохранить тест" onClick={() => setFilterModal(null)}/>
+            </>
+        } setState={setFilterModal}/>)
     }
 
     return (
@@ -37,11 +43,20 @@ const MessagesTemplates: React.FunctionComponent = () => {
                         <textarea className="textArea"/>
                         <textarea className="textArea"/>
                     </div>
+
+                    <div className="message">
+                        <ButtonComponent text = 'тест' onClick={setModalHandler}/>
+                        <ButtonComponent text = 'тест' onClick={setModalHandler}/>
+                        <ButtonComponent text = 'тест' onClick={setModalHandler}/>
+                        <ButtonComponent text = 'тест' onClick={setModalHandler}/>
+                    </div>
                 </div>
                 <div className="buttonBlock">
                     <ButtonComponent text="Сохранить" className = {isLoading ? 'disabled' : ''}/>
                 </div>
             </div>
+
+            {filterModal}
         </div>
     );
 };

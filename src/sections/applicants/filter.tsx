@@ -29,6 +29,11 @@ const Filter: React.FunctionComponent = () => {
                     Номер телефона :
                     <InputDateComponent name="feedback_date" className="blockModalFilter"/>
                 </label>
+
+                <label>
+                    Рейтинг :
+                    <InputDateComponent name="feedback_date" className="blockModalFilter"/>
+                </label>
             </div>
 
             <ButtonComponent text={'Фильтровать'}/>
