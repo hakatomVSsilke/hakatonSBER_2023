@@ -26,20 +26,15 @@
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     position: absolute;
-    background-color: yellow;
     bottom: 0;
     left: 0;
 }
 
 button.buttonAut {
     padding: 10px 20px;
-    background: #aaafaa;
+    background-color: rgb(125 189 13);
     transition: 0s;
     margin: 0 auto;
-}
-
-button.buttonAut:hover {
-    background: linear-gradient(45deg, rgb(29, 161, 134), rgb(147, 220, 19));
 }
 
 button.buttonAut:active {
