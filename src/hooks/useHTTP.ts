@@ -32,7 +32,7 @@ interface useHttpProps
  * @returns {{request:(function(*, *=, *=, *=, *=):string)}}
  */
 export const useHttp = () => {
-    const request = useCallback(async (action: any, method = "GET", params: any = {}, headers: any = {}, body: any): Promise<any> => {
+    const request = useCallback(async (action: any, method = "GET", params: any = {}, headers: any = {}, body: any = null): Promise<any> => {
         let uriParams: string = '';
 
         if (Object.keys(params).length) {
@@ -44,6 +44,9 @@ export const useHttp = () => {
         let uri: string = `https://hackathonsber.pagekite.me${action}${uriParams}`;
 
         let request: Response;
+        let requestParams: {method: string, headers: any, body?: any} = {
+            method, headers
+        }
 
         if (typeof body !== 'string' && body !== null && method !== 'IMAGE') {
             body = JSON.stringify(body);
@@ -51,16 +54,11 @@ export const useHttp = () => {
 
         if (method === 'POST') {
             headers['Content-Type'] = 'application/json;charset=utf-8';
-        }  else if (method === 'IMAGE') {
-            method = 'POST';
+            requestParams.body = body;
         }
 
         try {
-            request = await fetch(uri, {
-                method  : method,
-                headers : headers,
-                body    : body
-            });
+            request = await fetch(uri, requestParams);
         } catch (error) {
             console.error('Ошибка запроса ' + error);
 

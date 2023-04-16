@@ -24,7 +24,7 @@ const FeedBackPipelinePageComponent: React.FunctionComponent = () => {
 		const {getData} = wrappedRequest('response/getStatus', 'GET', {}, {'Authorization': 'Bearer ' + localStorage.getItem('token')});
 
 		setPipeline(
-			<PipelinePageComponent getData ={getData} component = {(item: any, id: number) => <FeedbackComponent key = {id} item={item}/>}/>
+			<PipelinePageComponent getData ={getData} endPoint = '/response/getResponse' component = {(item: any, id: number) => <FeedbackComponent key = {id} item={item}/>}/>
 		)
 	}, [])
 

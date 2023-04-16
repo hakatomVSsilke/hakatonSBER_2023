@@ -3,13 +3,12 @@
 }
 
 .pipeline_inner-block {
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(250px, 400px) );
-    grid-column-gap: 30px;
     margin: 0 auto;
-    justify-content: center;
+    justify-content: space-around;
     min-width: 1300px;
-    min-height: 93vh;
+    min-height: 87vh;
+    display: flex;
+    flex-direction: row;
 }
 
 .pipeline_page-block .status_column-header {

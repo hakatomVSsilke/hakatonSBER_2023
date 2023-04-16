@@ -16,7 +16,7 @@ const FeedbackSectionHeader = () => {
     return (
         <>
             <div className = "section-header">
-                <TitleComponent text = '*По дефолту - все отклики, а так - отклики для отдела*'/>
+                <TitleComponent text = 'Отклики'/>
 
                 <ButtonComponent text = 'Фильтр' onClick={setModalHandler}/>
             </div>
