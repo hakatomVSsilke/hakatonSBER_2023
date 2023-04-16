@@ -4,6 +4,7 @@ import ButtonComponent from "../../../components/elements/button/button.componen
 import "./headerApplicants.style.css";
 import ModalWrapperComponent from "../../../components/modalWrapper/modalWrapper.component";
 import Action from "./action";
+import Filter from "../filter";
 
 const HeaderApplicants : React.FunctionComponent = () => {
 
@@ -18,18 +19,25 @@ const HeaderApplicants : React.FunctionComponent = () => {
         })
     }
 
+    const [modalFilter, setModalFilter] = useState<JSX.Element | null>(null);
+
+    const setModalHandler = () => {
+        setModalFilter(<ModalWrapperComponent component={<Filter/>} setState={setModalFilter}/>)
+    }
+
 
     return (
         <>
             <div className="header-applicants">
                 <TitleComponent text="Соискатели"/>
 
-                <ButtonComponent text = "Фильтр" />
+                <ButtonComponent text = "Фильтр" onClick={setModalHandler}/>
 
-                <ButtonComponent text="Массовое действие" onClick={handleClick} className="visionBtn"/>
+                <ButtonComponent text="Массовое действие" onClick={handleClick}/>
             </div>
 
             {modal}
+            {modalFilter}
         </>
     );
 };

@@ -1,0 +1,15 @@
+.filter-modal-block .filter-inputs {
+    display: grid;
+    grid-row-gap: 13px;
+    justify-content: center;
+}
+
+.filter-modal-block .filter-inputs  label{
+    display: grid;
+    grid-row-gap: 4px;
+}
+
+.filter-modal-block button.simpleButton {
+    margin: 9px auto;
+    display: block;
+}

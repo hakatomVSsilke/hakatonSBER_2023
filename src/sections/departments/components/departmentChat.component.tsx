@@ -10,9 +10,9 @@ const DepartmentChatBlockComponent: React.FunctionComponent = () => {
     const departmentId: string | undefined = params.id;
 
     return (
-        <div id="chatBlock" style={{height: '91vh'}}>
+        <div id="chatBlock" style={{height: '80vh'}}>
             <div className="textBlock">
-                <TitleComponent text=""/>
+                <TitleComponent text="Сообщение"/>
             </div>
             <div id="display"></div>
             <div id="blockMessage">
