@@ -3,6 +3,10 @@ import "./messagesTemplates.style.css";
 import ButtonComponent from "../../../components/elements/button/button.component";
 
 const MessagesTemplates: React.FunctionComponent = () => {
+    const saveHandler: Function = (): void => {
+
+    }
+
     return (
         <div className="templateBlock">
             <div className="content">
@@ -29,7 +33,7 @@ const MessagesTemplates: React.FunctionComponent = () => {
                     </div>
                 </div>
                 <div className="buttonBlock">
-                    <ButtonComponent text="Отправить"/>
+                    <ButtonComponent text="Сохранить"/>
                 </div>
             </div>
         </div>

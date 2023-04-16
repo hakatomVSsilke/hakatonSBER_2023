@@ -2,11 +2,10 @@ import React, {useRef} from "react";
 import {FeedbackItemInterface} from "../../../interfaces/feedbackItem.interface";
 
 const FeedbackComponent: React.FunctionComponent<FeedbackItemInterface> = ({item = {}}) => {
-    console.log(item)
     const id = item.id;
     const name = item.name;
     const vacancy = item.vacancy;
-    const repsonseDate = item.response_date;
+    const responseDate = item.response_date;
     const className = item.className || '';
 
     return (
@@ -22,7 +21,7 @@ const FeedbackComponent: React.FunctionComponent<FeedbackItemInterface> = ({item
                 <div className="top-data">
                     <span>{name}</span>
 
-                    <span>{repsonseDate}</span>
+                    <span>{responseDate}</span>
                 </div>
 
                 <div className = "vacancy">

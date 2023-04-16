@@ -1,7 +1,5 @@
 import promiseWrapper from "../wappers/promiseWrapper";
 
-const {request_white_list : requestWhiteList} = require('../hook/config/request.json');
-
 interface wrappedRequestProps
 {
     action: any;
@@ -73,12 +71,6 @@ function badResponse(errorText: string): {data: string, error: boolean} {
  * @param body
  */
 const request = async (action: any, method: any, params:any, headers:any, body:any) => {
-    let requestAction = requestWhiteList.some((reqAction: any) => reqAction === action);
-
-    if (!requestAction) {
-        throw badResponse('Ошибка запроса: неизвестый action');
-    }
-
     let uriParams: string = '';
 
     if (Object.keys(params).length) {
@@ -87,7 +79,7 @@ const request = async (action: any, method: any, params:any, headers:any, body:a
         });
     }
 
-    let uri: string = `https://server-cahef34500.pagekite.me/?action=${action}${uriParams}`;
+    let uri: string = `https://hackathonsber.pagekite.me/${action}${uriParams}`;
 
     let request: any = {};
 

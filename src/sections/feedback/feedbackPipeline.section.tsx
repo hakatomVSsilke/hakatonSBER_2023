@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useState} from "react";
+import React, {FunctionComponent, Suspense, useContext, useEffect, useState} from "react";
 import PipelinePageComponent from "../../components/pipeline/pipelinePage.component";
 import FeedbackSectionHeader from "../../sections/feedback/components/feedbackSectionHeader";
 import FeedbackComponent from "./components/feedback.component";
@@ -8,13 +8,24 @@ import {StatusPipelineItemsTypes} from "../../interfaces/pipelinePageComponentIt
 import {FeedbackItemInterface} from "../../interfaces/feedbackItem.interface";
 
 import '../../styles/section.style.css';
+import {useDragAndDrop} from "../../hooks/useDragAndDrop";
+import {Provider} from "react-redux";
+import {FeedbackContext} from "../../context/feedbackContext";
+import wrappedRequest from "../../requestWrapper/wrapperRequest";
+import LoaderComponent from "../../components/elements/loader/loader.component";
 
-const FeedBackPipelinePageComponent = () => {
-	const backData: StatusData[] = [
-		{ id: 1, name: "status_1" },
-		{ id: 2, name: "status_2" },
-		{ id: 3, name: "status_3" },
-	];
+const FeedBackPipelinePageComponent: React.FunctionComponent = () => {
+	const [statuses, setStatuese] = useState({});
+	const [pipelinePage, setPipeline] = useState<any>(null);
+	const {drop, dragEnd, dragStart, setData, clearAll} = useDragAndDrop();
+
+	useEffect(() => {
+		const {getData} = wrappedRequest('response/getStatus', 'POST');
+		console.log(getData)
+		setPipeline(
+			<PipelinePageComponent getData ={getData} component = {(item: any, id: number) => <FeedbackComponent key = {id} item={item}/>}/>
+		)
+	}, [])
 
 	const feedbackItems: StatusPipelineItemsTypes = {
 		'status_1': [
@@ -98,11 +109,14 @@ const FeedBackPipelinePageComponent = () => {
 	};
 
 	return (
-		<>
+		<FeedbackContext.Provider value = {{drop, dragEnd, dragStart, setData, clearAll}}>
 			<FeedbackSectionHeader />
 
-			<PipelinePageComponent statusData ={backData} items = {feedbackItems} component = {(item: FeedbackItemInterface, id: number) => <FeedbackComponent key = {id} item={item}/>}/>
-		</>
+
+			<Suspense fallback={<LoaderComponent />}>
+				{pipelinePage}
+			</Suspense>
+		</FeedbackContext.Provider>
 	);
 };
 

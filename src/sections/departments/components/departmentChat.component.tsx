@@ -12,7 +12,7 @@ const DepartmentChatBlockComponent: React.FunctionComponent = () => {
     return (
         <div id="chatBlock" style={{height: '91vh'}}>
             <div className="textBlock">
-                <TitleComponent text=""/>
+                <TitleComponent text="Сообщение"/>
             </div>
             <div id="display"></div>
             <div id="blockMessage">

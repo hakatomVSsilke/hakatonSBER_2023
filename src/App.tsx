@@ -5,6 +5,9 @@ import AuthPage from "./pages/authorisation/auth.page";
 
 import "./styles/App.css";
 import DepartmentChatComponent from "./sections/departments/components/departmentChat.component";
+import {Provider} from "react-redux";
+import {FeedbackContext} from "./context/feedbackContext";
+import {useDragAndDrop} from "./hooks/useDragAndDrop";
 
 const TitlePage = React.lazy(() => import("./sections/titlePage"));
 
@@ -44,7 +47,7 @@ function App() {
 
     useEffect(() => {
         userRouterHandler(true);
-    }, []);
+    }, [])
 
     const userRouterHandler = (isAuthorized: boolean) => {
         if (!isAuthorized) {
@@ -58,14 +61,15 @@ function App() {
         setUserRouter(
             <Route path="/" element={<AuthorizedPage/>}>
                 <Route index element={<TitlePage/>}/>
-                <Route path="feedback">
-                    <Route
-                        index
-                        path="pipeline_view"
-                        element={<FeedBackPipelinePageComponent/>}
-                    />
-                    <Route path="list_view" element={<FeedBackPipelinePageComponent/>}/>
-                </Route>
+
+                    <Route path="feedback">
+                        <Route
+                            index
+                            path="pipeline_view"
+                            element={<FeedBackPipelinePageComponent/>}
+                        />
+                        <Route path="list_view" element={<FeedBackPipelinePageComponent/>}/>
+                    </Route>
 
                 <Route path="tasks" element={<TasksComponent/>}/>
 

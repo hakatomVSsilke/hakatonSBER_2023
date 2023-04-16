@@ -1,14 +1,8 @@
-import {StatusData} from "./status.interface";
-import {StatusPipelineItemsTypes} from "./pipelinePageComponentItemTypes.interface";
-import React, {ReactNode} from "react";
-import {PipelineItemInterface} from "./pipelineItem.interface";
-import {FeedbackItemInterface} from "./feedbackItem.interface";
+import React from "react";
 
 export interface PipelinePageComponentInterface
 {
-    statusData: StatusData[];
-
-    items: StatusPipelineItemsTypes;
+    getData: any;
 
     component: any;
 }
