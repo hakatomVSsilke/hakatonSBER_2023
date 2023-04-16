@@ -38,7 +38,7 @@ const TbodyComponent = ({elements}: any) => {
                     let value: any = element.name;
 
                     if (element.href) {
-                        value = <Link to={element.href}> {element.name} </Link>
+                        value = <Link to={element.href} className="text-link"> {element.name} </Link>
                     }
                     return <td key={index} className="column-value">
                         {value}

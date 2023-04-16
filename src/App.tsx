@@ -47,7 +47,7 @@ function App() {
     const {drop, dragEnd, dragStart, setData, clearAll} = useDragAndDrop();
 
     useEffect(() => {
-        userRouterHandler(true);
+        userRouterHandler(false);
     }, [])
 
     const userRouterHandler = (isAuthorized: boolean) => {

@@ -4,6 +4,7 @@
     border-collapse: separate;
     border-spacing: 0 10px;
     text-align: center;
+    font-size: 18px;
 }
 
 .table .table-head {
@@ -30,4 +31,14 @@
 
 .checkBox {
     margin: 20px auto;
+}
+
+.text-link {
+    user-select: none;
+    text-decoration: none;
+    color: black;
+}
+
+.text-link:visited {
+    color: green;
 }

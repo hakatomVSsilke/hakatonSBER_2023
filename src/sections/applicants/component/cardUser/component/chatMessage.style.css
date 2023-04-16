@@ -3,7 +3,7 @@
     background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
     height: 85vh;
     width: 95%;
-    margin: 0 auto;
+    margin: 10px auto;
     color: whitesmoke;
     max-width: 800px;
 }
@@ -40,7 +40,7 @@
     text-decoration: none;
     transition: 0.2s all;
     font-size: 16px;
-    margin-left: 8px;
+    margin-left: 15px;
 }
 
 #inputText:hover {
