@@ -4,6 +4,7 @@ import AuthorizedPage from "./pages/authorizedPage";
 import AuthPage from "./pages/authorisation/auth.page";
 
 import "./styles/App.css";
+import DepartmentChatComponent from "./sections/departments/components/departmentChat.component";
 
 const TitlePage = React.lazy(() => import("./sections/titlePage"));
 
@@ -60,7 +61,9 @@ function App() {
 
                 <Route path="tasks" element={<TasksComponent/>}/>
 
-                <Route path="departments" element={<DepartmentsComponent/>}/>
+                <Route path="departments" element={<DepartmentsComponent/>}>
+                    <Route path={'chat/:id'} element={<DepartmentChatComponent/>}/>
+                </Route>
 
                 <Route path="applicants">
                     <Route index element={<ApplicantsComponent/>}/>

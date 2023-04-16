@@ -1,12 +1,13 @@
-import React from "react";
+import React, {FunctionComponent, useState} from "react";
 import PipelinePageComponent from "../../components/pipeline/pipelinePage.component";
 import FeedbackSectionHeader from "../../sections/feedback/components/feedbackSectionHeader";
 import FeedbackComponent from "./components/feedback.component";
 
-import '../../styles/section.style.css';
 import {StatusData} from "../../interfaces/status.interface";
 import {StatusPipelineItemsTypes} from "../../interfaces/pipelinePageComponentItemTypes.interface";
 import {FeedbackItemInterface} from "../../interfaces/feedbackItem.interface";
+
+import '../../styles/section.style.css';
 
 const FeedBackPipelinePageComponent = () => {
 	const backData: StatusData[] = [
@@ -100,7 +101,7 @@ const FeedBackPipelinePageComponent = () => {
 		<>
 			<FeedbackSectionHeader />
 
-			<PipelinePageComponent statusData ={backData} items = {feedbackItems} component = {(id: number,item: any) => <FeedbackComponent item = {item}/>}/>
+			<PipelinePageComponent statusData ={backData} items = {feedbackItems} component = {(item: FeedbackItemInterface, id: number) => <FeedbackComponent key = {id} item={item}/>}/>
 		</>
 	);
 };

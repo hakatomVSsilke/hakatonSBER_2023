@@ -17,7 +17,7 @@ interface InputTextComponentProps
     onChange?: any;
 }
 
-const InputTextComponent: React.FunctionComponent<InputTextComponentProps> = ({name = '', value = '', className = '', id = '', onInput = null, onChange = null}: any) => {
+const InputTextComponent: React.FunctionComponent<InputTextComponentProps> = ({name = '', value = '', className = '', id = '', onInput = () => {}, onChange = () => {}}: any) => {
     return (
         <>
             <input

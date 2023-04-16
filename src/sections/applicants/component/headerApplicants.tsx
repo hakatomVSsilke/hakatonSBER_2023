@@ -23,7 +23,8 @@ const HeaderApplicants = () => {
         <>
             <div className="header-applicants">
                 <TitleComponent text="Соискатели"/>
-                <div className="filter">Фильтр</div>
+
+                <ButtonComponent text = "Фильтр" />
 
                 <ButtonComponent text="Массовое действие" onClick={handleClick} className="visionBtn"/>
             </div>

@@ -6,6 +6,7 @@
 	padding: 0 10px;
 	max-width: 110px;
 	position: fixed;
+	z-index: 100;
 }
 
 #nav_section-block #nav_section_buttons-block {
@@ -50,7 +51,40 @@
 	stroke: green;
 }
 
+#nav_section-block:hover + #navigation-block-ghost {
+	margin-left: 97px;
+}
+
 #nav_section-block #nav_section_buttons-block a:active {
 	transform: scale(0.98);
 	box-shadow: none;
+
+}
+
+#navigation-block-ghost {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	text-align: center;
+	margin-left: -16px;
+	transition: 0.4s;
+	z-index: 90;
+}
+
+#navigation-block-ghost-elements {
+	height: 100vh;
+	width: max-content;
+	background: white;
+	border-right: 1px solid #c9c9c9;
+	padding: 0 10px;
+	max-width: 110px;
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+}
+
+#navigation-block-ghost-elements .nav-name {
+	color: #08a552;
+	font-weight: bold;
+	margin: 29px 0px;
 }

@@ -3,9 +3,9 @@
     background: linear-gradient(45deg, rgb(147, 220, 19), rgb(29, 161, 134));
     height: 100%;
     width: 95%;
-    box-shadow: 0 0 6px 0 #c7c7c7;
     margin: 0 auto;
     color: whitesmoke;
+    max-width: 500px;
 }
 
 .textBlock {
@@ -17,7 +17,6 @@
     width: 95%;
     height: 85%;
     background-color: whitesmoke;
-    box-shadow: 0 0 6px 0 #c7c7c7;
     margin: 0 auto;
 }
 

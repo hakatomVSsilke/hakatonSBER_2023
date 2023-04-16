@@ -1,5 +1,7 @@
 import {PipelinePageComponentItemTypes} from "./pipelinePageComponentItemTypes.interface";
-import React from "react";
+import React, {ReactNode} from "react";
+import {PipelineItemInterface} from "./pipelineItem.interface";
+import {FeedbackItemInterface} from "./feedbackItem.interface";
 
 export interface StatusColumn
 {
@@ -11,5 +13,5 @@ export interface StatusColumn
 
     items: PipelinePageComponentItemTypes;
 
-    component: React.FunctionComponent;
+    component: any;
 }

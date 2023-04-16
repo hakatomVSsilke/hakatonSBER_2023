@@ -1,7 +1,7 @@
 import React     from "react";
 import {TitleComponent} from "../elements/title/title.component";
 import {StatusColumn} from "../../interfaces/statusColumn.interface";
-import {PipelineItemInterface} from "../../interfaces/pipelineItem.interface";
+import {FeedbackItemInterface} from "../../interfaces/feedbackItem.interface";
 
 const StatusColumnComponent: React.FunctionComponent<StatusColumn> = ({name, color, id, items, component}) => {
     console.log(name)
@@ -13,11 +13,11 @@ const StatusColumnComponent: React.FunctionComponent<StatusColumn> = ({name, col
             </div>
 
             <div className='status_column-list'>
-                {component('empty', {name: 'empty', statusName: name, className: 'empty'})}
+                {component({name: 'empty', statusName: name, className: 'empty'}, 'empty')}
 
                 {
-                    items.map((item: PipelineItemInterface, id: number) => {
-                        return component(id, item);
+                    items.map((item: FeedbackItemInterface, id: number) => {
+                        return component(item, id);
                     })
                 }
             </div>

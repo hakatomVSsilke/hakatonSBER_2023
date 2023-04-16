@@ -5,6 +5,7 @@ import DepartmentsHeaderComponent from "./components/departmentsHeader.component
 
 import '../../styles/section.style.css';
 import {DepartmentItemInterface} from "../../interfaces/departmentItem.interface";
+import {Outlet} from "react-router-dom";
 
 const departments: DepartmentItemInterface[] = [
     {
@@ -52,13 +53,18 @@ function Departments() {
             <DepartmentsHeaderComponent/>
 
             <div id="container">
-                {
-                    departments.map((item: DepartmentItemInterface) => {
-                        return <DepartmentComponent key = {item.id} item = {item} setModal = {setModal}/>
-                })
-                }
-            </div>
+                <div id = "department-list">
+                    {
+                        departments.map((item: DepartmentItemInterface) => {
+                            return <DepartmentComponent key = {item.id} item = {item} setModal = {setModal}/>
+                        })
+                    }
+                </div>
 
+                <div id = "chatBlock">
+                    <Outlet />
+                </div>
+            </div>
             {modal}
         </>
     );

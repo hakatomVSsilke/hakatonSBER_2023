@@ -5,7 +5,6 @@ import {TitleComponent} from "../../../../../components/elements/title/title.com
 
 const ChatMessage = () => {
     return (
-        <>
             <div id="chatBlock">
                 <div className="textBlock">
                     <TitleComponent text="Чат"/>
@@ -16,8 +15,6 @@ const ChatMessage = () => {
                     <ButtonComponent text="отправить" className="btn"/>
                 </div>
             </div>
-
-        </>
     );
 };
 

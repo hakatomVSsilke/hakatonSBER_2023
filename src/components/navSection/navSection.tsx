@@ -1,28 +1,31 @@
-import React from "react";
-
-import './navSection.style.css';
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import IconComponent from "../icons/icon.component";
 
+import './navSection.style.css';
+
 const navSection: React.FunctionComponent = () => {
-    const pathName = window.location.pathname;
+    let activeElement = '';
+
+    const changeSectionHandler = (sectionName: string) => {
+    }
 
     return (
         <div id = "nav_section-block">
             <div id = "nav_section_buttons-block">
-                <Link data-title = {'Отклики'} to='/feedback/pipeline_view' className = {pathName === '/feedback/pipeline_view' ? 'active' : ''}>
+                <Link onClick={() => changeSectionHandler('/feedback/pipeline_view')} data-title = {'Отклики'} to='/feedback/pipeline_view' className = {activeElement === '/feedback/pipeline_view' ? 'active' : ''}>
                     <IconComponent name = "applicants" className = "applicants"/>
                 </Link>
-                <Link data-title = {'Задачи'} to='tasks' className = {pathName === '/tasks' ? 'active' : ''}>
+                <Link  onClick={() => changeSectionHandler('/tasks')} data-title = {'Задачи'} to='/tasks' className = {activeElement === '/tasks' ? 'active' : ''}>
                     <IconComponent name = "tasks"/>
                 </Link>
-                <Link data-title = {'Отделы'} to='/departments' className = {pathName === '/departments' ? 'active' : ''}>
+                <Link onClick={() => changeSectionHandler('/departments')} data-title = {'Отделы'} to='/departments' className = {activeElement === '/departments' ? 'active' : ''}>
                     <IconComponent name = "departments"/>
                 </Link>
-                <Link data-title = {'Соискатели'} to='applicants' className = {pathName === '/applicants' ? 'active' : ''}>
+                <Link onClick={() => changeSectionHandler('/applicants')} data-title = {'Соискатели'} to='/applicants' className = {activeElement === '/applicants' ? 'active' : ''}>
                     <IconComponent name = "users"/>
                 </Link>
-                <Link data-title = {'Настройки'} to='/settings' className = {pathName === '/settings/settings.section' ? 'active' : ''}>
+                <Link onClick={() => changeSectionHandler('/settings')} data-title = {'Настройки'} to='/settings' className = {activeElement === '/settings/settings.section' ? 'active' : ''}>
                     <IconComponent name = "settings" className = "settings"/>
                 </Link>
             </div>

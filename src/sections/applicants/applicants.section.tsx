@@ -21,6 +21,7 @@ const Applicants = () => {
     return (
         <div id="containerBlock">
             <HeaderApplicants/>
+
             <TableListComponent theadElements={thead} tbodyElements={tbody}/>
         </div>
     );

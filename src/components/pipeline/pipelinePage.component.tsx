@@ -9,6 +9,8 @@ import {
     PipelinePageComponentItemTypes,
     StatusPipelineItemsTypes
 } from "../../interfaces/pipelinePageComponentItemTypes.interface";
+import {PipelineItemInterface} from "../../interfaces/pipelineItem.interface";
+import {FeedbackItemInterface} from "../../interfaces/feedbackItem.interface";
 
 const PipelinePageComponent: React.FunctionComponent<PipelinePageComponentInterface> = ({statusData, items, component}) => {
     return (
@@ -29,7 +31,7 @@ const PipelinePageComponent: React.FunctionComponent<PipelinePageComponentInterf
                             color = {status.color}
                             id = {status.id}
                             items = {statusItems}
-                            component = {(id: any, item: any) => component(id, item)}
+                            component = {(item: PipelineItemInterface, id: number) => component(item, id)}
                         />
                     })
                 }
